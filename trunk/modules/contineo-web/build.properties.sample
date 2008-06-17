@@ -1,0 +1,17 @@
+###################################################################
+# Developer's properties file
+#
+# This file collects all developer specific settings involved in 
+# ant builds. Copy this file into build.properties and setup your 
+# own variables and/or custom values
+###################################################################
+
+#Hibernate settings 
+hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+hibernate.home=C:/Programmi/JavaSuite/frameworks/hibernate-3.2
+
+#Axis settings
+axis.home=/home/marco/JavaSuite/frameworks/axis2-1.3/
+
+#Webapp deploy dir
+deployTarget=/home/alle/javasuite/servers/apache-tomcat-5.5.12/webapps/contineo-3.0.1

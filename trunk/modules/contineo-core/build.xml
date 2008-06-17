@@ -1,0 +1,39 @@
+<project name="contineo" default="deploy" basedir="." >
+	<target name="deploy" description="Updates a deployed webapp">
+		<property environment="env" />
+		<property id="properties" file="build.properties" />
+
+		<echo message="Deploying to webapp" />
+		<copy todir="${deployTarget}/WEB-INF/plugins">
+			<fileset dir="target">
+				<include name="*.zip" />
+			</fileset>
+		</copy>
+		<copy todir="${pluginDir}/classes">
+					<fileset dir="target/classes">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+	</target>
+
+	<target name="initTaskDefs" description="Some task definitions">
+		<property environment="env" />
+		<property id="properties" file="build.properties" />
+		
+		<path id="hibernate.classpath">
+			<fileset dir="${hibernate.home}">
+				<include name="**/*.jar" />
+			</fileset>
+			<pathelement path="target/classes" />
+		</path>
+		<taskdef name="schemaexport" classname="org.hibernate.tool.hbm2ddl.SchemaExportTask" classpathref="hibernate.classpath" />
+	</target>
+
+	<target name="schema-export" depends="initTaskDefs" description="Sql schema creation from Hibernate mappings">
+		<schemaexport quiet="no" text="yes" drop="no" delimiter=";" output="target/schema-export.sql">
+			<fileset dir="src">
+				<include name="**/*.hbm.xml" />
+			</fileset>
+		</schemaexport>
+	</target>
+</project>

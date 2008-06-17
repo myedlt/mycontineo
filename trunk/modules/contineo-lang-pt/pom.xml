@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.contineo</groupId>
+		<artifactId>contineo</artifactId>
+		<version>3.0.3</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	<artifactId>contineo-lang-pt</artifactId>
+	<version>1.0.0</version>
+	<name>Sample PT language plugin</name>
+	<description>Sample PT language plugin for Contineo 3.0.3</description>
+	<packaging>jar</packaging>
+	<scm>
+		<connection />
+		<developerConnection />
+	</scm>
+
+	<dependencies>
+        <dependency>
+            <groupId>net.sf.jpf</groupId>
+            <artifactId>jpf-boot</artifactId>
+            <version>1.5.1</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jpf</groupId>
+            <artifactId>jpf</artifactId>
+            <version>1.5.1</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.2</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.3</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>        
+        <dependency>
+            <groupId>org.contineo</groupId>
+            <artifactId>contineo-util</artifactId>
+            <version>3.0.3</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.contineo</groupId>
+			<artifactId>contineo-core</artifactId>
+			<version>3.0.3</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<encoding>iso-8859-1</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>package</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<copy todir="${project.build.directory}/webapp/">
+									<fileset dir="${basedir}/src/main/webapp">
+										<exclude name="**/*.java" />
+									</fileset>
+								</copy>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-1</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/assemblyplugin.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<repositories>
+		<repository>
+			<id>ibiblio</id>
+			<name>Ibiblio Repository</name>
+			<url>http://www.ibiblio.org/maven2</url>
+		</repository>
+		<repository>
+			<id>java.net</id>
+			<url>http://download.java.net/maven/1</url>
+			<layout>legacy</layout>
+		</repository>
+		<repository>
+			<id>contineo</id>
+			<name>Contineo Repository</name>
+			<url>http://contineo.sourceforge.net/maven</url>
+		</repository>
+	</repositories>	
+	
+</project>

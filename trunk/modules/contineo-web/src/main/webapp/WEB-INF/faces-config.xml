@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config SYSTEM "web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+	<application>
+		<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
+		<view-handler>com.icesoft.faces.facelets.D2DSeamFaceletViewHandler</view-handler>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>it</supported-locale>
+			<supported-locale>de</supported-locale>
+			<supported-locale>fr</supported-locale>
+			<supported-locale>es</supported-locale>
+		</locale-config>
+		<message-bundle>org.contineo.web.i18n.application</message-bundle>
+		<message-bundle>org.contineo.core.i18n.localeInformation</message-bundle>
+	</application>
+
+	<validator>
+		<validator-id>validator.email</validator-id>
+		<validator-class>org.contineo.web.util.EmailValidator</validator-class>
+	</validator>
+
+	<managed-bean>
+		<managed-bean-name>renderManager</managed-bean-name>
+		<managed-bean-class>com.icesoft.faces.async.render.RenderManager</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>messages</managed-bean-name>
+		<managed-bean-class>org.contineo.web.i18n.Messages</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>loginForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.LoginForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>j_username</property-name>
+			<property-class>java.lang.String</property-class>
+			<null-value></null-value>
+		</managed-property>
+		<managed-property>
+			<property-name>j_password</property-name>
+			<property-class>java.lang.String</property-class>
+			<null-value></null-value>
+		</managed-property>
+		<managed-property>
+			<property-name>language</property-name>
+			<property-class>java.lang.String</property-class>
+			<value></value>
+		</managed-property>
+		<managed-property>
+			<property-name>navigation</property-name>
+			<value>#{navigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Managed Bean for dynamic style examples -->
+	<managed-bean>
+		<managed-bean-name>styleBean</managed-bean-name>
+		<managed-bean-class>org.contineo.web.StyleBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Menu Bar backing bean -->
+	<managed-bean>
+		<managed-bean-name>menuBar</managed-bean-name>
+		<managed-bean-class>org.contineo.web.navigation.MenuBarBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>navigation</property-name>
+			<value>#{navigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<managed-bean>
+		<description>Backing bean for application navigation.</description>
+		<managed-bean-name>documentNavigation</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.DocumentNavigation</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<description>Backing bean that controls which content will be displayed in the main area</description>
+		<managed-bean-name>navigation</managed-bean-name>
+		<managed-bean-class>org.contineo.web.navigation.NavigationBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>documentsRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.DocumentsRecordsManager</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>renderManager</property-name>
+			<value>#{renderManager}</value>
+		</managed-property>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>versionsRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.VersionsRecordsManager</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>rightsRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.RightsRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>documentNavigation</property-name>
+			<value>#{documentNavigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- File upload -->
+	<managed-bean>
+		<managed-bean-name>inputFile</managed-bean-name>
+		<managed-bean-class>org.contineo.web.upload.InputFileBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>renderManager</property-name>
+			<value>#{renderManager}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Document edit form -->
+	<managed-bean>
+		<managed-bean-name>documentForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.DocumentEditForm</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>documentNavigation</property-name>
+			<value>#{documentNavigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- New document creation wizard -->
+	<managed-bean>
+		<managed-bean-name>newDocWizard</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.NewDocWizard</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>documentNavigation</property-name>
+			<value>#{documentNavigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Version edit form -->
+	<managed-bean>
+		<managed-bean-name>versionForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.VersionEditForm</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>versionsManager</property-name>
+			<value>#{versionsRecordsManager}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Articles -->
+	<managed-bean>
+		<managed-bean-name>articlesRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.ArticlesRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>documentNavigation</property-name>
+			<value>#{documentNavigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- History -->
+	<managed-bean>
+		<managed-bean-name>historyRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.HistoryRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Email Form -->
+	<managed-bean>
+		<managed-bean-name>emailForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.EMailForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>documentNavigation</property-name>
+			<value>#{documentNavigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Selection components backing bean -->
+	<managed-bean>
+		<managed-bean-name>selectionTags</managed-bean-name>
+		<managed-bean-class>org.contineo.web.SelectionTagsBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Search form -->
+	<managed-bean>
+		<managed-bean-name>searchForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.search.SearchForm</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>navigation</property-name>
+			<value>#{navigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Keywords -->
+	<managed-bean>
+		<managed-bean-name>keywords</managed-bean-name>
+		<managed-bean-class>org.contineo.web.search.KeywordsBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Directory form -->
+	<managed-bean>
+		<managed-bean-name>directoryForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.document.DirectoryEditForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>documentNavigation</property-name>
+			<value>#{documentNavigation}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Informations about indexing engine -->
+	<managed-bean>
+		<managed-bean-name>indexInfo</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.IndexInfo</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Informations about backup -->
+	<managed-bean>
+		<managed-bean-name>backupInfo</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.BackupInfo</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>messagesRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.communication.MessagesRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>navigation</property-name>
+			<value>#{navigation}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>form</property-name>
+			<value>#{messageForm}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Message form -->
+	<managed-bean>
+		<managed-bean-name>messageForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.communication.MessageForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Administration -->
+
+	<!-- Users -->
+	<managed-bean>
+		<managed-bean-name>usersRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.UsersRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>userForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.UserForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Groups -->
+	<managed-bean>
+		<managed-bean-name>groupsRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.GroupsRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>logForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.LogForm</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>foldersForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.FoldersForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>accountsRecordsManager</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.AccountsRecordsManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>accountForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.AccountForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>smtpForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.admin.SmtpForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Settings -->
+	<managed-bean>
+		<managed-bean-name>passwordForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.settings.PasswordForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>personalDataForm</managed-bean-name>
+		<managed-bean-class>org.contineo.web.settings.PersonalDataForm</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Setup wizard -->
+	<managed-bean>
+		<managed-bean-name>setupWizard</managed-bean-name>
+		<managed-bean-class>org.contineo.web.setup.SetupWizard</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<navigation-rule>
+		<description>Login</description>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>loginSuccess</from-outcome>
+			<to-view-id>/main.iface</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>loginFailure</from-outcome>
+			<to-view-id>/login.iface</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.iface</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<lifecycle>
+		<phase-listener>org.contineo.web.MultiPageMessagesSupport</phase-listener>
+	</lifecycle>
+</faces-config>

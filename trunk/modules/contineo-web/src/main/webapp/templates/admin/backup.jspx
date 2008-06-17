@@ -1,0 +1,50 @@
+<?xml version = '1.0'?>
+<!-- 
+ Backup settings
+  
+ @author Marco Meschieri
+ @version $Id: user.jspx,v 1.1 2007/10/16 16:12:10 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form"
+	id="searchEngineForm">
+	<ice:panelGroup styleClass="center formBorderHighlight"
+		style="width: 500px;">
+		<ice:messages />
+		<ice:panelGroup>
+			<ice:panelGroup>
+				<ice:panelGrid columns="2">
+					<ice:panelGroup>
+						<ice:outputLabel value="#{msgs['msg.jsp.backupdir']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="backupDir" value="#{backupInfo.backupDir}"
+							required="true" size="60" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:outputLabel value="#{msgs['msg.jsp.enabled']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:selectBooleanCheckbox value="#{backupInfo.enabled}" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+		</ice:panelGroup>
+
+		<br />
+		<ice:panelGroup styleClass="commands">
+			<ice:commandButton value="#{msgs['save']}"
+				action="#{backupInfo.save}" />
+			<ice:commandButton value="#{msgs['msg.jsp.restore']}"
+				action="#{backupInfo.restore}"
+				onclick="if (!confirm(&quot;#{msgs['msg.question.restorebackup']}&quot;)) return false;" visible="#{backupInfo.enabled}" />
+		</ice:panelGroup>
+	</ice:panelGroup>
+</jsp:root>

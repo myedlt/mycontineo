@@ -1,0 +1,119 @@
+<?xml version = '1.0'?>
+<!-- 
+ Documents list table
+  
+ @author Marco Meschieri
+ @version $Id: documents.jspx,v 1.11 2006/09/03 16:24:37 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form"
+	id="documentsForm">
+
+	<ice:panelGroup>
+		<ui:include src="/templates/document/toolbar.jspx" />
+		<div style="display: none">
+			<!-- Attention: this dummy div is used only to make the toolbar trim/paste 
+			   buttons responsive to user actions. We do not have ideas about this strange behaviour of IceFaces-->
+			clipboard size= #{documentsRecordsManager.clipboardSize}
+		</div>
+	</ice:panelGroup>
+
+	<!-- Basic table -->
+	<ice:panelGroup styleClass="formBorderHighlight"
+		rendered="#{documentsRecordsManager.count > 0}">
+		<ice:dataTable id="documentsList"
+			value="#{documentsRecordsManager.documents}" var="documentRecord"
+			cellpadding="0" rows="10"
+			columnClasses="docSelectionColumn,triangleColumn,docNameColumn,docMenuColumn,docDateColumn,docSizeColumn">
+
+			<!-- selection column -->
+			<ice:column>
+				<ice:panelGroup>
+					<ice:rowSelector value="#{documentRecord.selected}"
+						multiple="#{documentsRecordsManager.multipleSelection}"
+						selectionListener="#{documentsRecordsManager.selectRow}"
+						selectedClass="rowSelSelected" mouseOverClass="rowMouseOver" />
+					<ice:selectBooleanCheckbox value="#{documentRecord.selected}" />
+				</ice:panelGroup>
+			</ice:column>
+
+			<!-- contract/expand column -->
+			<ice:column>
+				<ice:panelGroup styleClass="#{documentRecord.indentStyleClass}">
+					<!-- Render the expand/contract if there is an image -->
+					<ice:commandLink
+						actionListener="#{documentRecord.toggleSubGroupAction}">
+						<ice:graphicImage value="#{styleBean.imagesPath}/#{documentRecord.expandContractImage}"
+							style="border: 0px solid;" />
+					</ice:commandLink>
+				</ice:panelGroup>
+			</ice:column>
+
+			<!-- Name -->
+			<ice:column>
+				<f:facet name="header">
+					<ice:outputText value="#{msgs['msg.jsp.docname']}" />
+				</f:facet>
+				<ice:panelGroup styleClass="#{documentRecord.rowStyleClass}">
+					<ice:graphicImage
+						value="#{styleBean.imagesPath}/#{documentRecord.icon}"
+						style="border: 0px solid;" />
+					<ice:outputLink value="download?menuId=#{documentRecord.menuId}"
+						target="_blank" title="#{documentRecord.description}">
+						<ice:outputText value="#{documentRecord.displayDescription}" />
+					</ice:outputLink>
+				</ice:panelGroup>
+			</ice:column>
+
+			<!-- Context Menu -->
+			<ice:column>
+				<ice:panelGroup styleClass="#{documentRecord.rowStyleClass}">
+					<ice:menuBar value="#{documentRecord.menuId}"
+						orientation="horizontal" rendered="#{documentRecord.documentFound}">
+						<ice:menuItems value="#{documentRecord.model}" />
+					</ice:menuBar>
+				</ice:panelGroup>
+			</ice:column>
+
+			<!-- Date -->
+			<ice:column>
+				<f:facet name="header">
+					<ice:outputText value="#{msgs['msg.jsp.sourcedate']}" />
+				</f:facet>
+				<ice:panelGroup styleClass="#{documentRecord.rowStyleClass}">
+					<ice:outputText value="#{documentRecord.menu.date}">
+						<f:convertDateTime pattern="#{loc.dateFormatShort}" />
+					</ice:outputText>
+				</ice:panelGroup>
+			</ice:column>
+
+			<!-- Size -->
+			<ice:column>
+				<f:facet name="header">
+					<ice:outputText value="#{msgs['msg.jsp.foldercontent.size']}" />
+				</f:facet>
+				<ice:panelGroup styleClass="#{documentRecord.rowStyleClass}">
+					<ice:outputText value="#{documentRecord.menu.size} KB" />
+				</ice:panelGroup>
+			</ice:column>
+		</ice:dataTable>
+
+		<ice:panelGroup>
+			<cnt:paginator table="documentsList"
+				label="#{msgs['document.paginator']}" />
+			<br />
+		</ice:panelGroup>
+	</ice:panelGroup>
+
+	<ice:panelGroup styleClass="formBorderHighlight"
+		rendered="#{documentsRecordsManager.count &lt; 1}">
+		<ice:outputText value="#{msgs['noelements']}" />
+	</ice:panelGroup>
+</jsp:root>

@@ -1,0 +1,89 @@
+<?xml version = '1.0'?>
+<!-- 
+ This page is the SMTP setup form
+  
+ @author Marco Meschieri
+ @version $Id: user.jspx,v 1.1 2007/10/16 16:12:10 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form" id="smtpForm">
+	<ice:panelGroup styleClass="center formBorderHighlight"
+		style="width: 500px;">
+		<ice:panelGroup>
+			<ice:panelGroup>
+				<ice:messages />
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.smtpsettings']}" />
+					<br />
+					<br />
+				</h3>
+				<ice:panelGrid columns="2">
+					<ice:panelGroup>
+						<ice:outputLabel for="host" value="#{msgs['msg.jsp.host']}" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="host" value="#{smtpForm.host}" required="true"
+							size="40" />
+						<br />
+						<ice:message for="host" />
+					</ice:panelGroup>
+
+					<ice:panelGroup>
+						<ice:outputLabel for="port" value="#{msgs['msg.jsp.port']}" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="port" value="#{smtpForm.port}" size="10" />
+						<br />
+						<ice:message for="port" />
+					</ice:panelGroup>
+
+					<ice:panelGroup>
+						<ice:outputLabel for="username"
+							value="#{msgs['msg.jsp.login.username']}" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="username" value="#{smtpForm.username}"
+							size="20" />
+						<br />
+						<ice:message for="username" />
+					</ice:panelGroup>
+
+					<ice:panelGroup>
+						<ice:outputLabel for="password"
+							value="#{msgs['msg.jsp.login.password']}" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+                        <ice:inputSecret id="password" value="#{smtpForm.password}"
+                           size="20" maxlength="255" rendered="#{smtpForm.emptyPassword}" />
+                           <ice:commandLink action="#{smtpForm.removePassword}" 
+                             rendered="#{!smtpForm.emptyPassword}" immediate="true" partialSubmit="true"><ice:outputText styleClass="iceMsgError" value="  #{msgs['password.remove']}" /></ice:commandLink>
+						<br />
+						<ice:message for="password" />
+					</ice:panelGroup>
+
+					<ice:panelGroup>
+						<ice:outputLabel for="defaultAddress"
+							value="#{msgs['msg.jsp.email']}" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="defaultAddress"
+							value="#{smtpForm.defaultAddress}" size="40" />
+						<br />
+						<ice:message for="defaultAddress" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+
+			<ice:panelGroup styleClass="commands">
+				<ice:commandButton value="#{msgs['save']}" action="#{smtpForm.save}" />
+			</ice:panelGroup>
+		</ice:panelGroup>
+	</ice:panelGroup>
+</jsp:root>

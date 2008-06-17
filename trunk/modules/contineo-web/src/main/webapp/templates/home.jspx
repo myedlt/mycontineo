@@ -1,0 +1,86 @@
+<?xml version = '1.0'?>
+<!-- 
+ Page for documents browsing
+  
+ @author Marco Meschieri
+ @version $Id: home.jspx,v 1.3 2006/08/31 15:31:18 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:panelGroup"
+	styleClass="home">
+	<ice:panelGroup styleClass="welcomePanel">
+		<h3>
+			<ice:outputFormat value="#{messages['msg.jsp.main.welcome']}">
+				<f:param value="#{authUser}" />
+				<f:param value="#{context['product.name']}" />
+			</ice:outputFormat>
+		</h3>
+	</ice:panelGroup>
+
+	<ice:panelGrid columns="3" columnClasses="homePanel,spacer,homePanel"
+		style="width:100%">
+		<ice:panelGroup>
+			<h3>
+				<ice:outputText value="#{msgs['msg.jsp.messages']}" />
+			</h3>
+			<ice:form>
+				<ice:panelGroup style="padding-top: 10px">
+					<ice:graphicImage value="#{styleBean.imagesPath}/editmessage.png" />
+					<ice:outputText value=" " />
+					<ice:commandLink action="#{messagesRecordsManager.addMessage}"
+						value="#{msgs['db.createmessage']}" />
+				</ice:panelGroup>
+				<ice:panelGroup style="padding-top: 10px">
+					<ice:graphicImage value="#{styleBean.imagesPath}/message.png" />
+					<ice:outputText value=" " />
+					<ice:commandLink action="#{messagesRecordsManager.listMessages}">
+						<ice:outputText value="#{msgs['db.readmessages']}" />
+						<ice:outputText value=" (#{messagesRecordsManager.toBeReadCount})" />
+					</ice:commandLink>
+				</ice:panelGroup>
+			</ice:form>
+		</ice:panelGroup>
+		<ice:panelGroup />
+		<ice:panelGroup>
+			<h3>
+				<ice:outputText value="#{msgs['msg.jsp.lastdocs']}" />
+			</h3>
+			<ice:form>
+				<!-- Basic table -->
+				<ice:panelGroup>
+					<!-- Table with results -->
+					<ice:dataTable id="documentsList"
+						value="#{documentsRecordsManager.lastDocs}" var="entry"
+						cellpadding="0" rows="10" columnClasses="lastdocColumn"
+						styleClass="resultTable">
+						<ice:column>
+							<ice:panelGroup style="white-space: nowrap;">
+								<ice:commandLink title="#{msgs['msg.jsp.openinfolder']}"
+									action="#{documentNavigation.openInFolder}">
+									<ice:graphicImage value="#{styleBean.imagesPath}/folder.png" styleClass="iconSmall" />
+								</ice:commandLink>
+								
+								<ice:outputText value="&amp;nbsp;&amp;nbsp;" escape="false" />
+									
+								<ice:outputLink value="download?menuId=#{entry.menuId}"
+									target="_blank">
+									<ice:graphicImage value="#{styleBean.imagesPath}/#{entry.icon}"
+										styleClass="iconSmall" />
+									<ice:outputText value=" " />
+									<ice:outputText value="#{entry.displayDescription}" />
+								</ice:outputLink>
+							</ice:panelGroup>
+						</ice:column>
+					</ice:dataTable>
+				</ice:panelGroup>
+			</ice:form>
+		</ice:panelGroup>
+	</ice:panelGrid>
+</jsp:root>
