@@ -3,7 +3,15 @@
 	 	create DATABASE `contineo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci 
  		jdbc:mysql://localhost:3306/contineo?useUnicode=true&characterEncoding=UTF-8
  	中文分词	?
- 	
+发布
+	1）手工
+		mvn install
+		手动将war包发布到tomcat目录；
+	2）自动
+		web应用=》contineo-web：  		ant update（默认）
+		语言插件=》contineo-lang-pt：	ant deploy
+	3）contineo-lang-pt
+		顶层pom.xml中没有包含该模块，需手动编译 mvn install，然后ant deploy
 技术
 	spring 2.0.7
 	hibernate 
@@ -11,7 +19,7 @@
 	iceFaces 引入AJAX特性
 	lucene 2.3.2
 	JPF
-	Axis2-1.3 web service k开源项目，外部IT系统集成
+	Axis2-1.3 web service 开源项目，外部IT系统集成
 	Maven 2
 
 contineo-web/
