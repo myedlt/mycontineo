@@ -1,0 +1,91 @@
+<?xml version = '1.0'?>
+<!-- 
+ This page is the group editing form
+  
+ @author Marco Meschieri
+ @version $Id: user.jspx,v 1.1 2007/10/16 16:12:10 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form" >
+	
+	<ice:panelGroup styleClass="center formBorderHighlight"
+		style="width: 500px;">
+		<ice:panelGroup>
+			<!-- Group data -->
+			<ice:panelGroup>
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.groupdata']}" />
+					<br />
+					<br />
+				</h3>
+				<ice:panelGrid columns="5">
+					<ice:panelGroup>
+						<ice:outputLabel for="groupName"
+							value="#{msgs['msg.jsp.groupname']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="groupName"
+							value="#{groupsRecordsManager.selectedGroup.groupName}"
+							maxlength="30" required="true"
+							disabled="#{groupsRecordsManager.selectedPanel == 'edit'}" />
+						<br />
+						<ice:message for="groupName" />
+					</ice:panelGroup>
+					<ice:panelGroup style="width:20px" />
+					<ice:panelGroup>
+						<ice:outputLabel for="groupDesc"
+							value="#{msgs['msg.jsp.groupdesc']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="groupDesc"
+							value="#{groupsRecordsManager.selectedGroup.groupDesc}"
+							maxlength="255"  binding="#{groupsRecordsManager.groupDesc}"/>
+						<br />
+						<ice:message for="groupDesc" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+		</ice:panelGroup>
+
+		<!-- Group affiliation -->
+		<ice:panelGroup
+			rendered="#{groupsRecordsManager.selectedPanel == 'create'}">
+			<hr />
+			<h3>
+				<ice:outputText value="#{msgs['msg.jsp.inheritgroup']}" />
+				<br />
+				<br />
+			</h3>
+			<ice:panelGrid columns="5">
+				<ice:panelGroup>
+					<ice:outputLabel for="parentGroup"
+						value="#{msgs['msg.jsp.inheritgroup']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:selectOneMenu id="parentGroup" styleClass="selectOneMenu"
+						value="#{groupsRecordsManager.parentGroup}">
+						<f:selectItems value="#{selectionTags.groups}" />
+					</ice:selectOneMenu>
+				</ice:panelGroup>
+				<ice:panelGroup style="width:20px" />
+				<ice:panelGroup />
+				<ice:panelGroup />
+			</ice:panelGrid>
+		</ice:panelGroup>
+
+		<br />
+		<ice:panelGroup styleClass="commands">
+			<ice:commandButton value="#{msgs['abort']}" immediate="true"
+				action="#{groupsRecordsManager.list}" />
+			<ice:commandButton value="#{msgs['save']}"
+				action="#{groupsRecordsManager.save}" />
+		</ice:panelGroup>
+	</ice:panelGroup>
+</jsp:root>

@@ -1,0 +1,206 @@
+<?xml version = '1.0'?>
+<!-- 
+ This page is the account editing form
+  
+ @author Marco Meschieri
+ @version $Id: user.jspx,v 1.1 2007/10/16 16:12:10 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form" id="accountForm">
+
+	<ice:panelGroup styleClass="center formBorderHighlight"
+		style="width: 600px;">
+		<ice:panelGroup>
+			<!-- Account data -->
+			<ice:panelGroup>
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.accountdata']}" />
+					<br />
+					<br />
+				</h3>
+				<ice:panelGrid columns="5">
+					<ice:panelGroup>
+						<ice:outputLabel for="mailaddress"
+							value="#{msgs['msg.jsp.mailaddress']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="mailaddress"
+							value="#{accountForm.account.mailAddress}" maxlength="255"
+							required="true" binding="#{accountForm.mailAddress}"/>
+						<br />
+						<ice:message for="mailaddress" />
+					</ice:panelGroup>
+					<ice:panelGroup style="width:20px" />
+					<ice:panelGroup />
+					<ice:panelGroup />
+
+					<ice:panelGroup>
+						<ice:outputLabel for="accountUser"
+							value="#{msgs['msg.jsp.login.username']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="accountUser"
+							value="#{accountForm.account.accountUser}" maxlength="255"
+							required="true" binding="#{accountForm.accountUser}"/>
+						<br />
+						<ice:message for="accountUser" />
+					</ice:panelGroup>
+					<ice:panelGroup style="width:20px" />
+					<ice:panelGroup>
+						<ice:outputLabel for="accountPassword"
+							value="#{msgs['msg.jsp.login.password']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+					    <ice:inputSecret id="accountPassword" value="#{accountForm.password}"
+                            maxlength="255" binding="#{accountForm.accountPassword}" rendered="#{accountForm.emptyPassword}"/>
+                        <ice:commandLink action="#{accountForm.removePassword}" 
+                              rendered="#{!accountForm.emptyPassword}" immediate="true" partialSubmit="true"><ice:outputText styleClass="iceMsgError" value="  #{msgs['password.remove']}" /></ice:commandLink>
+						<br />
+						<ice:message for="accountPassword" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+
+			<!-- Incoming data -->
+			<ice:panelGroup>
+				<hr />
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.incoming']}" />
+					<br />
+					<br />
+				</h3>
+				<ice:panelGrid columns="5">
+					<ice:panelGroup>
+						<ice:outputLabel for="protocol"
+							value="#{msgs['msg.jsp.protocol']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:selectOneMenu styleClass="selectTagMenu"
+							value="#{accountForm.account.provider}" binding="#{accountForm.provider}">
+							<f:selectItem itemValue="pop3"
+								itemLabel="#{msgs['msg.jsp.mail.in.pop3']}" />
+							<f:selectItem itemValue="imap"
+								itemLabel="#{msgs['msg.jsp.mail.in.imap']}" />
+						</ice:selectOneMenu>
+						<br />
+						<ice:message for="protocol" />
+					</ice:panelGroup>
+					<ice:panelGroup style="width:20px" />
+					<ice:panelGroup>
+						<ice:outputLabel for="deleteFromMailbox"
+							value="#{msgs['msg.jsp.mail.deleteFromMailbox']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:selectOneMenu id="deleteFromMailbox"
+							styleClass="selectTagMenu"
+							value="#{accountForm.account.deleteFromMailbox}" binding="#{accountForm.deleteFromMailbox}">
+							<f:selectItems value="#{selectionTags.yesNo}" />
+						</ice:selectOneMenu>
+						<ice:message for="deleteFromMailbox" />
+					</ice:panelGroup>
+
+					<ice:panelGroup>
+						<ice:outputLabel for="host" value="#{msgs['msg.jsp.host']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="host" value="#{accountForm.account.host}"
+							maxlength="255" required="true" binding="#{accountForm.host}"/>
+						<br />
+						<ice:message for="host" />
+					</ice:panelGroup>
+					<ice:panelGroup style="width:20px" />
+					<ice:panelGroup>
+						<ice:outputLabel for="port" value="#{msgs['msg.jsp.port']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="port" value="#{accountForm.account.port}"
+							maxlength="5" binding="#{accountForm.port}"/>
+						<br />
+						<ice:message for="port" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+
+			<!-- Storage data -->
+			<ice:panelGroup>
+				<hr />
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.storage']}" />
+					<br />
+					<br />
+				</h3>
+				<ice:panelGrid columns="5">
+					<ice:panelGroup>
+						<ice:outputLabel for="allowedTypes"
+							value="#{msgs['msg.jsp.allowedTypes']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputText id="allowedTypes"
+							value="#{accountForm.account.allowedTypes}" maxlength="255" binding="#{accountForm.allowedTypes}"/>
+						<br />
+						<ice:message for="allowedTypes" />
+					</ice:panelGroup>
+					<ice:panelGroup style="width:20px" />
+					<ice:panelGroup>
+						<ice:outputLabel for="language"
+							value="#{msgs['msg.jsp.login.language']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:selectOneMenu id="language" styleClass="selectTagMenu"
+							value="#{accountForm.account.language}" binding="#{accountForm.language}">
+							<f:selectItems value="#{selectionTags.languages}" />
+						</ice:selectOneMenu>
+						<ice:message for="language" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+			<ice:panelGroup>
+				<ice:panelGrid columns="2">
+					<ice:panelGroup>
+						<ice:outputLabel for="accountTree"
+							value="#{msgs['msg.jsp.targetFolder']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup styleClass="treeContainer_horizontal">
+						<ice:tree id="accountTree" value="#{accountForm.directoryModel}"
+							var="item" hideRootNode="false" hideNavigation="false"
+							imageDir="#{styleBean.imageDirectory}"
+							binding="#{accountForm.treeComponent}" immediate="true" actionListener="#{accountForm.nodeClicked}">
+							<ice:treeNode>
+								<f:facet name="icon">
+									<ice:panelGroup style="display: inline">
+										<ice:graphicImage value="#{item.userObject.icon}" />
+										<ice:commandLink
+											actionListener="#{accountForm.onSelectDirectory}"
+											immediate="true">
+											<f:param name="directoryId" value="#{item.userObject.menuId}" />
+											<ice:outputText value="#{item.userObject.displayText}"
+												styleClass="#{item.userObject.selected ? 'selected-tree-node' : 'tree-node'}" />
+										</ice:commandLink>
+									</ice:panelGroup>
+								</f:facet>
+								<f:facet name="content">
+									<ice:panelGroup style="display: inline">
+										<ice:outputText value="(#{item.userObject.count})" />
+									</ice:panelGroup>
+								</f:facet>
+							</ice:treeNode>
+						</ice:tree>
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+		</ice:panelGroup>
+		<ice:panelGroup styleClass="commands">
+			<ice:commandButton value="#{msgs['abort']}"
+				action="#{accountsRecordsManager.list}" immediate="true" />
+			<ice:commandButton value="#{msgs['save']}"
+				action="#{accountForm.save}" />
+		</ice:panelGroup>
+	</ice:panelGroup>
+</jsp:root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="/*" location="30,30" dimension="54,36" />
+  <JSFFlowResource path="/main.iface" location="540,200" dimension="97,36" />
+  <JSFFlowResource path="/login.iface" location="330,30" dimension="97,36" />
+  <JSFFlowNavigationCase id="/*,/main.iface,loginSuccess,null" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="57,66" />
+      <AbsolutePoint location="57,218" />
+      <AbsolutePoint location="540,218" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/login.iface,loginFailure,null" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="84,48" />
+      <AbsolutePoint location="330,48" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/login.iface,login,null" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="84,63" />
+      <AbsolutePoint location="330,63" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

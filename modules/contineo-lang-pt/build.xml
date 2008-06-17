@@ -1,0 +1,16 @@
+<project name="logicaldoc-web" default="deploy" basedir="." >
+	<target name="deploy" description="Updates a deployed webapp">
+		<property environment="env" />
+		<property id="properties" file="build.properties" />
+
+		<echo message="Deploying to an already installed webapp" />
+
+		<echo message="Deploying to a plugin dir" />
+		<copy todir="${deployTarget}">
+			<fileset dir="target">
+				<include name="*.zip" />
+			</fileset>
+		</copy>
+
+	</target>
+</project>

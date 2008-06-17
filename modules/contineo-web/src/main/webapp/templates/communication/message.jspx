@@ -1,0 +1,120 @@
+<?xml version = '1.0'?>
+<!-- 
+ Message's insert form
+  
+ @author Marco Meschieri
+ @version $Id: message.jspx,v 1.2 2006/08/31 15:31:18 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form">
+
+		<ice:panelGroup styleClass="center formBorderHighlight">
+			<!-- Core data -->
+			<ice:panelGroup>
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.messageheader']}"
+						rendered="#{!messageForm.readOnly}" />
+					<br />
+					<br />
+				</h3>
+
+				<ice:panelGrid columns="2">
+					<ice:panelGroup>
+						<ice:outputLabel for="recipient"
+							value="#{msgs['msg.jsp.recipient']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:inputText id="recipient"
+							value="#{messageForm.message.recipient}" maxlength="100"
+							size="20" required="true" />
+						<br />
+						<ice:message for="recipient" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{messageForm.readOnly}">
+						<ice:outputText value="#{messageForm.message.recipient}" />
+					</ice:panelGroup>
+
+
+					<ice:panelGroup>
+						<ice:outputLabel for="subject"
+							value="#{msgs['msg.jsp.subject']}*:" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:inputText id="subject" value="#{messageForm.message.subject}"
+							maxlength="100" required="true" />
+						<br />
+						<ice:message for="subject" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{messageForm.readOnly}">
+						<ice:outputText value="#{messageForm.message.subject}" />
+					</ice:panelGroup>
+
+
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:outputLabel for="confirmation"
+							value="#{msgs['msg.jsp.confirmation']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:selectBooleanCheckbox id="confirmation"
+							value="#{messageForm.confirmation}" />
+					</ice:panelGroup>
+
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:outputLabel for="dateScope"
+							value="#{msgs['msg.jsp.validityperiod']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:inputText id="dateScope"
+							value="#{messageForm.message.dateScope}" maxlength="5"
+							required="true" />
+						<br />
+						<ice:message for="dateScope" />
+					</ice:panelGroup>
+
+
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:outputLabel for="prio" value="#{msgs['msg.jsp.prio']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup rendered="#{!messageForm.readOnly}">
+						<ice:selectOneMenu id="prio" styleClass="selectTagMenu"
+							value="#{messageForm.message.prio}" >
+							<f:selectItems value="#{selectionTags.messagePriorities}" />
+						</ice:selectOneMenu>
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+
+			<!-- Body -->
+			<ice:panelGroup>
+				<hr />
+				<h3>
+					<ice:outputText value="#{msgs['msg.jsp.message']}" />
+					<br />
+					<br />
+				</h3>
+				<ice:panelGrid columns="2">
+					<ice:panelGroup>
+						<ice:outputLabel for="message" value="#{msgs['msg.jsp.message']}:" />
+					</ice:panelGroup>
+					<ice:panelGroup>
+						<ice:inputTextarea id="message" cols="80" rows="5"
+							value="#{messageForm.message.messageText}" />
+					</ice:panelGroup>
+				</ice:panelGrid>
+			</ice:panelGroup>
+
+			<ice:panelGroup styleClass="commands">
+				<ice:commandButton value="&lt;&lt; #{msgs['msg.jsp.back']}"
+					partialSubmit="true" action="#{messageForm.back}" />
+				<ice:commandButton value="#{msgs['save']}"
+					action="#{messageForm.save}" rendered="#{!messageForm.readOnly}" />
+			</ice:panelGroup>
+		</ice:panelGroup>
+</jsp:root>

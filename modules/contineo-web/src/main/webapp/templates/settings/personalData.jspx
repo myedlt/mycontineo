@@ -1,0 +1,143 @@
+<?xml version = '1.0'?>
+<!-- 
+ User's personal data
+  
+ @author Marco Meschieri
+ @version $Id: user.jspx,v 1.1 2007/10/16 16:12:10 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form"
+	id="personalDataForm">
+	
+	<ice:panelGroup styleClass="center formBorderHighlight"
+		style="width: 600px;">
+		<ice:messages />
+		
+		<!-- Personal data -->
+		<ice:panelGroup>
+			<h3>
+				<ice:outputText value="#{msgs['msg.jsp.adduser.personaldata']}" />
+				<br />
+				<br />
+			</h3>
+			<ice:panelGrid columns="5">
+				<ice:panelGroup>
+					<ice:outputLabel for="firstName"
+						value="#{msgs['msg.jsp.adduser.firstname']}*:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="firstName" value="#{personalDataForm.firstName}"
+						partialSubmit="true" maxlength="30" required="true" />
+					<br />
+					<ice:message for="firstName" />
+				</ice:panelGroup>
+				<ice:panelGroup style="width:20px" />
+				<ice:panelGroup>
+					<ice:outputLabel for="name"
+						value="#{msgs['msg.jsp.adduser.name']}*:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="name" value="#{personalDataForm.name}"
+						partialSubmit="true" maxlength="30" required="true" />
+					<br />
+					<ice:message for="name" />
+				</ice:panelGroup>
+
+				<ice:panelGroup>
+					<ice:outputLabel for="street"
+						value="#{msgs['msg.jsp.adduser.street']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="street" value="#{personalDataForm.street}"
+						partialSubmit="true" maxlength="100" />
+					<br />
+					<ice:message for="street" />
+				</ice:panelGroup>
+				<ice:panelGroup style="width:20px" />
+				<ice:panelGroup>
+					<ice:outputLabel for="postalCode"
+						value="#{msgs['msg.jsp.adduser.postalcode']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="postalCode"
+						value="#{personalDataForm.postalCode}" partialSubmit="true"
+						maxlength="10" />
+					<br />
+					<ice:message for="postalCode" />
+				</ice:panelGroup>
+
+				<ice:panelGroup>
+					<ice:outputLabel for="city"
+						value="#{msgs['msg.jsp.adduser.city']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="city" value="#{personalDataForm.city}"
+						maxlength="30" partialSubmit="true" />
+					<br />
+					<ice:message for="city" />
+				</ice:panelGroup>
+				<ice:panelGroup style="width:20px" />
+				<ice:panelGroup>
+					<ice:outputLabel for="country"
+						value="#{msgs['msg.jsp.adduser.country']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="country" value="#{personalDataForm.country}"
+						maxlength="30" partialSubmit="true" />
+					<br />
+					<ice:message for="country" />
+				</ice:panelGroup>
+
+				<ice:panelGroup>
+					<ice:outputLabel for="language"
+						value="#{msgs['msg.jsp.adduser.language']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:selectOneMenu styleClass="selectTagMenu"
+						value="#{personalDataForm.language}" partialSubmit="true">
+						<f:selectItems value="#{selectionTags.languages}" />
+					</ice:selectOneMenu>
+				</ice:panelGroup>
+				<ice:panelGroup style="width:20px" />
+				<ice:panelGroup>
+					<ice:outputLabel for="email"
+						value="#{msgs['msg.jsp.adduser.email']}*:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="email" value="#{personalDataForm.email}"
+						maxlength="100" partialSubmit="true" required="true">
+						<f:validator validatorId="validator.email" />
+					</ice:inputText>
+					<br />
+					<ice:message for="email" />
+				</ice:panelGroup>
+
+				<ice:panelGroup>
+					<ice:outputLabel for="phone"
+						value="#{msgs['msg.jsp.adduser.phone']}:" />
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:inputText id="phone" value="#{personalDataForm.phone}"
+						maxlength="30" partialSubmit="true" />
+					<br />
+					<ice:message for="phone" />
+				</ice:panelGroup>
+				<ice:panelGroup style="width:20px" />
+				<ice:panelGroup />
+				<ice:panelGroup />
+			</ice:panelGrid>
+		</ice:panelGroup>
+
+		<ice:panelGroup styleClass="commands">
+			<ice:commandButton value="#{msgs['save']}"
+				action="#{personalDataForm.save}" />
+		</ice:panelGroup>
+	</ice:panelGroup>
+</jsp:root>

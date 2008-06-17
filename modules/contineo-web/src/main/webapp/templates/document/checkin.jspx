@@ -1,0 +1,59 @@
+<?xml version = '1.0'?>
+<!-- 
+ This page shows the upload document wizard
+  
+ @author Marco Meschieri
+ @version $Id: checkin.jspx,v 1.2 2006/08/29 16:33:45 marco Exp $
+ @since 3.0
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:form" id="uploadForm">
+
+	<h2>
+		<ice:outputText value="#{msgs['msg.jsp.checkin']}"
+			style="padding-left:8px;" />
+	</h2>
+
+	<ice:messages />
+
+	<ice:panelGroup styleClass="formBorderHighlight">
+		<ice:panelGroup>
+			<ice:inputFile styleClass="inputFile"
+				progressListener="#{inputFile.progress}"
+				actionListener="#{inputFile.action}" />
+			<ice:outputProgress id="pro" value="#{inputFile.percent}" />
+			<ice:outputText value="File Name: #{inputFile.fileName}"
+				style="padding-left:8px;" />
+			<br />
+
+
+			<!-- Description -->
+			<ice:outputText value="#{msgs['msg.jsp.versiondesc']}:"
+				style="padding-left:8px;" />
+			<ice:inputText id="versiondesc" value="#{inputFile.description}"
+				maxlength="255" size="80" />
+			<br />
+
+			<!-- Version type selection -->
+			<ice:outputText value="#{msgs['msg.jsp.version']}:"
+				style="padding-left:8px;" />
+			<ice:selectOneMenu styleClass="selectTagMenu"
+				value="#{inputFile.versionType}">
+				<f:selectItems value="#{selectionTags.versionTypes}" />
+			</ice:selectOneMenu>
+		</ice:panelGroup>
+
+		<ice:panelGroup styleClass="commands">
+			<ice:commandButton value="#{msgs['abort']}" partialSubmit="true"
+				action="#{newDocWizard.abort}" />
+			<ice:commandButton value="#{msgs['msg.jsp.checkin']}"
+				action="#{documentForm.checkin}" rendered="#{inputFile.percent==100}" />
+		</ice:panelGroup>
+	</ice:panelGroup>
+</jsp:root>
