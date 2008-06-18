@@ -32,7 +32,7 @@
 						<ice:panelGrid columns="2" style="width:100%;">
 							<ice:graphicImage url="#{styleBean.imagesPath}/logo.gif"
 								style="padding-left: 10px;" />
-							<ice:outputText value="System Setup"
+							<ice:outputText value="#{msgs['SystemSetup']}"
 								style="font-size: 20px; font-weight: bold; font-family: Trebuchet MS, Tahoma, Myriad; color:#7F7F7F;" />
 						</ice:panelGrid>
 
@@ -150,15 +150,15 @@
 											<ice:inputText id="clazz"
 												binding="#{setupWizard.cdata.classInput}"
 												value="#{setupWizard.cdata.clazz}" size="42" />
-											<ice:outputText value="URL:" />
+											<ice:outputText value="#{msgs['db.URL']}" />
 											<ice:inputText id="dburl"
 												binding="#{setupWizard.cdata.dburlInput}"
 												value="#{setupWizard.cdata.dburl}" size="42" />
-											<ice:outputText value="Username:" />
+											<ice:outputText value="#{msgs['db.Username']}" />
 											<ice:inputText id="user"
 												binding="#{setupWizard.cdata.userInput}"
 												value="#{setupWizard.cdata.user}" />
-											<ice:outputText value="Password:" />
+											<ice:outputText value="#{msgs['db.Password']}" />
 											<ice:inputText id="password"
 												binding="#{setupWizard.cdata.passwordInput}"
 												value="#{setupWizard.cdata.password}" />
@@ -178,15 +178,15 @@
 									<ice:panelGroup rendered="#{setupWizard.setupSuccess}">
 										<h3 style="font-size: 10pt;">
 										   <ice:outputFormat value="#{msgs['setup.success']}" >
-										     <f:param value="#{messages['applicationTitle']}" />
+										     <f:param value="#{messages['系统']}" />
 										   </ice:outputFormat>
 										</h3>
 										<br />
 										   <ice:outputText value="#{msgs['setup.login']}" />:
 										   <br />
 										<br />
-										<b>Username:</b> admin<br />
-										<b>Password:</b> admin<br />
+										<b>用户名:</b> admin<br />
+										<b>密码:</b> admin<br />
 										<br />
 											<ice:outputText value="#{msgs['setup.remember']}" /><br />
 										<br />
