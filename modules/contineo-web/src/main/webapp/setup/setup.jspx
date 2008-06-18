@@ -178,15 +178,15 @@
 									<ice:panelGroup rendered="#{setupWizard.setupSuccess}">
 										<h3 style="font-size: 10pt;">
 										   <ice:outputFormat value="#{msgs['setup.success']}" >
-										     <f:param value="#{messages['系统']}" />
+										     <f:param value="#{messages['']}" />
 										   </ice:outputFormat>
 										</h3>
 										<br />
 										   <ice:outputText value="#{msgs['setup.login']}" />:
 										   <br />
 										<br />
-										<b>用户名:</b> admin<br />
-										<b>密码:</b> admin<br />
+										<b>#{msgs['db.Username']}</b> admin<br />
+										<b>#{msgs['db.Password']}</b> admin<br />
 										<br />
 											<ice:outputText value="#{msgs['setup.remember']}" /><br />
 										<br />
