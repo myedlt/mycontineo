@@ -26,7 +26,7 @@
 				</h3>
 				<ice:panelGrid columns="2">
 					<ice:panelGroup>
-						<ice:outputLabel for="userDir" value="用户目录:" />
+						<ice:outputLabel for="userDir" value="#{msgs['userDir']}" />
 					</ice:panelGroup>
 					<ice:panelGroup>
 						<ice:inputText id="userDir" value="#{foldersForm.userDir}"
@@ -36,7 +36,7 @@
 					</ice:panelGroup>
 
 					<ice:panelGroup>
-						<ice:outputLabel for="docDir" value="文档目录:" />
+						<ice:outputLabel for="docDir" value="#{msgs['docDir']}" />
 					</ice:panelGroup>
 					<ice:panelGroup>
 						<ice:inputText id="docDir" value="#{foldersForm.docDir}"
@@ -46,7 +46,7 @@
 					</ice:panelGroup>
 
 					<ice:panelGroup>
-						<ice:outputLabel for="indexDir" value="索引目录:" />
+						<ice:outputLabel for="indexDir" value="#{msgs['indexDir']}" />
 					</ice:panelGroup>
 					<ice:panelGroup>
 						<ice:inputText id="indexDir" value="#{foldersForm.indexDir}"
