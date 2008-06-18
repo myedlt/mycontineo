@@ -29,7 +29,7 @@
 					</ice:outputFormat></b>
 				</ice:panelGroup>
 				<ice:panelGroup>
-					<ice:outputLink value="http://contineo.sourceforge.net"
+					<ice:outputLink value="http://www.edlt.com"
 						target="_blank">
 						<ice:graphicImage value="#{styleBean.imagesPath}/logo.gif"
 							style="border: 0px solid white; padding-left: 50px" />
