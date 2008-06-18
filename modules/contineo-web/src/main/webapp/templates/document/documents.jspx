@@ -74,6 +74,9 @@
 
 			<!-- Context Menu -->
 			<ice:column>
+				<f:facet name="header">
+					<ice:outputText value="#{msgs['msg.jsp.action']}" />
+				</f:facet>
 				<ice:panelGroup styleClass="#{documentRecord.rowStyleClass}">
 					<ice:menuBar value="#{documentRecord.menuId}"
 						orientation="horizontal" rendered="#{documentRecord.documentFound}">
