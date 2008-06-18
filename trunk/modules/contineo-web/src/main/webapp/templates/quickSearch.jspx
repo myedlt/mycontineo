@@ -6,6 +6,7 @@
  @version $Id: quickSearch.jspx,v 1.8 2006/08/29 16:33:46 marco Exp $
  @since 3.0
 -->
+ 
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -45,6 +46,7 @@ function clearSearch(element, label) {
 				</tr>
 				<tr>
 					<td nowrap="nowrap" class="searchOptionsTD">
+					<div id="hidden" style="position:absolute;visibility:hidden;">
 						<ice:selectOneRadio value="#{searchForm.language}"
 							styleClass="searchOptions">
 							<f:selectItem
@@ -53,6 +55,7 @@ function clearSearch(element, label) {
 							<f:selectItem itemLabel="#{msgs['msg.jsp.search.allDocuments']}"
 								itemValue="all"/>
 						</ice:selectOneRadio>
+					</div>
 					</td>
 				</tr>
 			</tbody>
