@@ -100,12 +100,17 @@ public class SelectionTagsBean {
 	 * Gets the option items for file formats
 	 */
 	public SelectItem[] getFormats() {
-		return new SelectItem[] { new SelectItem("html", Messages.getMessage("msg.jsp.internetpage") + " (.html)"),
+		return new SelectItem[] { 
+				new SelectItem("html", Messages.getMessage("msg.jsp.internetpage") + " (.html)"),
 				new SelectItem("xml", Messages.getMessage("msg.jsp.xmlfile") + " (.xml)"),
-				new SelectItem("pdf", "Adobe Acrobat (.pdf)"), new SelectItem("ps", "Adobe Postscript (.ps)"),
-				new SelectItem("doc", "Microsoft Word (.doc)"),new SelectItem("docx", "Microsoft Word 2007(.docx)"), new SelectItem("odt", "OpenOffice Text (.odt)"),
-				new SelectItem("ods", "OpenOffice Calc (.ods)"), new SelectItem("wpd", "Word Perfect (.wpd)"),
-				new SelectItem("rtf", "Rich Text Format (.rtf)"),
+				new SelectItem("pdf", Messages.getMessage("msg.jsp.AdobeAcrobat") + " (.pdf)"), 
+				new SelectItem("ps", Messages.getMessage("msg.jsp.AdobePostscript") + " (.ps)"),
+				new SelectItem("doc", Messages.getMessage("msg.jsp.MicrosoftWord") + " (.doc)"),
+				new SelectItem("docx", Messages.getMessage("msg.jsp.MicrosoftWord2007") + " (.docx)"), 
+				new SelectItem("odt", Messages.getMessage("msg.jsp.OpenOfficeText") + " (.odt)"),
+				new SelectItem("ods", Messages.getMessage("msg.jsp.OpenOfficeCalc") + " (.ods)"), 
+				new SelectItem("wpd", Messages.getMessage("msg.jsp.WordPerfect") + " (.wpd)"),
+				new SelectItem("rtf", Messages.getMessage("msg.jsp.RichTextFormat") + " (.rtf)"),
 				new SelectItem("txt", Messages.getMessage("msg.jsp.textfile") + " (.txt)") };
 	}
 
