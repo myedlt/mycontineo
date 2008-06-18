@@ -14,7 +14,6 @@
 	<classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-core/2.3.2/lucene-core-2.3.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/bouncycastle/bcprov-jdk14/136/bcprov-jdk14-136.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-misc/2.3.2/lucene-misc-2.3.2.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/contineo/contineo-core/3.0.3/contineo-core-3.0.3.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-highlighter/2.3.2/lucene-highlighter-2.3.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/bouncycastle/bcmail-jdk14/136/bcmail-jdk14-136.jar"/>
 	<classpathentry kind="var" path="M2_REPO/net/sf/jpf/jpf/1.5.1/jpf-1.5.1.jar"/>
@@ -22,5 +21,6 @@
 	<classpathentry kind="var" path="M2_REPO/org/apache/poi/poi-scratchpad/3.0.1-FINAL/poi-scratchpad-3.0.1-FINAL.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/fontbox/fontbox/0.1.0/fontbox-0.1.0.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/contineo-util"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/contineo-core"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

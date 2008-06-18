@@ -36,7 +36,8 @@ public class LanguageManager {
 		languages.put("de", new Language(Locale.GERMAN));
 		languages.put("es", new Language(new Locale("es")));
 		languages.put("fr", new Language(Locale.FRENCH));
-
+		languages.put("zh_CN", new Language(Locale.SIMPLIFIED_CHINESE));
+		
 		// Acquire the 'Language' extensions of the core plugin and add defined languages
 		PluginRegistry registry = PluginRegistry.getInstance();
 		Collection<Extension> extensions = registry.getExtensions("contineo-core", "Language");
