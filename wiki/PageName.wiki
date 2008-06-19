@@ -35,10 +35,12 @@
 
 = 技术参数 =
 == 服务端运行环境 ==
-RedHat AS 5，Windows Server 2003
-MS SQLServer 2000，MySQL 4.1+，Oracle 9i+
-WebSphere Application Server，Tomcat 6.0.16
+  *  RedHat AS 5，Windows Server 2003
+  *  MS SQLServer 2000，MySQL 4.1+，Oracle 9i+
+  *  WebSphere Application Server，Tomcat 6.0.16
+
 == 客户端运行环境 ==
-	Internet Explorer 6.0、Firefox 2.0+
+  *  Internet Explorer 6.0、Firefox 2.0+
+
 == 开发环境 ==
-*  J2EE（JDK 1.6）
+  *  J2EE（JDK 1.6）
