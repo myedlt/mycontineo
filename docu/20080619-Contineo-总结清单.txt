@@ -1,0 +1,168 @@
+1. 简介：Contineo是基于Web的文档管理系统.它支持用户把文档处理成各种当前流行的格式,还可以与Office软件相结合来创建,修改文档.使用Contineo不仅可以发布,搜索,管理各种类型的文档,甚至可以与其它用户直接或通过Email相互交流.
+
+2. 下载 Contineo 3.0.3 源码：  https://sourceforge.net/project/showfiles.php?group_id=88385 (http://sourceforge.net/projects/contineo)
+
+3. java开发，采用的技术spring 2.0.7 ， hibernate【没有查到版本】，jsf 【替换了Struts，早期版本用到了struts】，iceFaces 引入AJAX特性 ， lucene 2.3.2【文档搜索】，JPF ， Axis2-1.3 web service 开源项目，外部IT系统集成 ， Maven 2
+
+4. 导入Eclipse中，需要mavan 2 中repository 中的jar包  调试无错。
+
+5. Contineo（文档管理系统）是支持多语言的，因是国外开发的开源软件，需要做本地化。根据其结构找到本地化文件路径：contineo-web下src/main/resources/org.contineo.web.i18n  增加汉化文件application_zh_CN.properties 把里面对应的英文汉化为中文
+
+6. 安装mysql数据库，要求是4.1--5.0的版本，创建Mysql数据库为utf8，手工建表;
+create DATABASE `contineo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci 
+
+7. 汉化后编译发布，建议使用：jDK1.6  tomcat6.0 。 要用mavan 2 发布，需要配置好mavan 2 在环境变量中设置M2_HOME ，java_home ，path
+
+编辑文件setEnvJDK1.6.bat
+rem
+set AD_HOME=D:\ADeveloper
+
+rem -----------Java Runtiome Environment------------
+set JAVA_HOME=%AD_HOME%\Java\jdk1.6.0
+set PATH=%JAVA_HOME%\bin
+
+
+添加注册表文件Contextmenu-Cmd-M2.reg
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmd]
+@="SakaiCMD"
+[HKEY_CLASSES_ROOT\Directory\shell\cmd\command]
+@="D:\\ADeveloper\\setEnvCMD.bat"
+
+
+配置好后，用mvn install 命令发布 这样就会在工程所在目录modules\contineo-web\target得到contineo-web-3.0.3.war这个文件，把找个war包里的文件解压到Tomcat 6.0 ==》webapps ==》 contineo【自己建立的一个文件夹】下，需要注意的是要配置apache-tomcat-6.0.16\conf下的tomcat-users.xml
+
+<?xml version='1.0' encoding='utf-8'?>
+<tomcat-users>
+  <role rolename="manager"/>
+  <role rolename="tomcat"/>
+  <role rolename="admin"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="tomcat" roles="tomcat"/>
+  <user username="both" password="tomcat" roles="tomcat,role1"/>
+  <user username="admin" password="secret" roles="manager,admin"/>
+  <user username="role1" password="tomcat" roles="role1"/>
+</tomcat-users>
+
+然后启动bin下的startup.bat
+
+
+8. Tomcat 启动成功后 在地址栏中输入http://localhost:8080/contineo/setup  注意配置数据库，一个是内部数据库，一路下一步就OK了。值得注意是外部数据库配置，不要填写制定的数据库路径还要加上编码格式，否则从数据库里取出来中文是乱码，如：数据库驱动路径：jdbc:mysql://localhost【IP地址】:3306/contineo?useUnicode=true&characterEncoding=UTF-8
+
+9. 在安装界面看到了汉化的“成果”，到了登录页面，在语言下拉选中没有看到中文字样，要想登录后页面显示中文，找个下拉选中必须要有中文的选项，在程序代码中很敏感language 就是针对多语言的，在程序中contineo-core 下src/main/java/org.contineo.core.i18n 下LanguageManager 中 private void init() {} 中添加languages.put("zh_CN", new Language(Locale.SIMPLIFIED_CHINESE)); 同时还要在contineo-core 下src/main/resources/org.contineo.core.i18n  下增加文件localeInformation_zh_CN.properties 其内容与这个包的文件一样。编译发布。测试通过。
+
+10. 然后大概走了一遍流程，发现里面有些汉化不是很贴切标准，因为语言环境决定了用词，主要修改的是application_zh_CN.properties【文件所在路径上面5中有】
+
+11. 在测试中发现了有些英文是页面写死的或者在java类中写死的，这个要尽量把其改写，读取资源文件。修改内容如下：
+（1）在安装页面安装成功后的信息提示：applicationTitle  是写在页面上的setup.jspx 第181行<f:param value="#{messages['applicationTitle']}" />经过测试决定去掉applicationTitle的显示，将message设置为空。
+（2）setup页面安装成功后显示username，password，采用读取资源文件的方法修改
+页面代码为153、188和189三行代码：											<ice:outputText value="#{msgs['db.URL']}" />
+<b>#{msgs['db.Username']}</b> admin<br />
+<b>#{msgs['db.Password']}</b> admin<br /> 
+资源文件application_zh_CN.properties中添加内容为db.URL = 数据库驱动路径：db.Username = 用户名：db.Password = 密码：	
+（3）在安装页面的logo图片显示需要更换，更改图片在modules\contineo-web\src\main\webapp\skins\default\images 下 同时点击图片的链接地址一定要改，版本问题！图片链接的修改在modules\contineo-web\src\main\webapp\templates\info.jspx 第32行
+（4）info.jspx这个是信息页面，也就是系统中 帮助中的关于，系统说明是在资源文件中汉化的，而下面的说明需要修改，改成公司简介。
+（5）info.jspx页面中读取modules\contineo-web\src\main\resources\context.properties 找个个文件里的内容
+product.name=文档管理系统
+product.release=   
+
+#product.url=http://contineo.wikispaces.com
+product.url=http://www.edlt.com
+
+style.defaultSkin=/skins/default
+但是找个文件是不需要上传提交的，本地配置文件。
+
+（6）高级查询 页面 中 格式 的下拉选择框 中有英文，经过调试查询 是写在java代码的，改成在资源文件中取值
+
+modules\contineo-web\src\main\java\org\contineo\web\SelectionTagsBean.java
+	public SelectItem[] getFormats() {
+		return new SelectItem[] { 
+				new SelectItem("html", Messages.getMessage("msg.jsp.internetpage") + " (.html)"),
+				new SelectItem("xml", Messages.getMessage("msg.jsp.xmlfile") + " (.xml)"),
+				new SelectItem("pdf", Messages.getMessage("msg.jsp.AdobeAcrobat") + " (.pdf)"), 
+				new SelectItem("ps", Messages.getMessage("msg.jsp.AdobePostscript") + " (.ps)"),
+				new SelectItem("doc", Messages.getMessage("msg.jsp.MicrosoftWord") + " (.doc)"),
+				new SelectItem("docx", Messages.getMessage("msg.jsp.MicrosoftWord2007") + " (.docx)"), 
+				new SelectItem("odt", Messages.getMessage("msg.jsp.OpenOfficeText") + " (.odt)"),
+				new SelectItem("ods", Messages.getMessage("msg.jsp.OpenOfficeCalc") + " (.ods)"), 
+				new SelectItem("wpd", Messages.getMessage("msg.jsp.WordPerfect") + " (.wpd)"),
+				new SelectItem("rtf", Messages.getMessage("msg.jsp.RichTextFormat") + " (.rtf)"),
+				new SelectItem("txt", Messages.getMessage("msg.jsp.textfile") + " (.txt)") };
+	}
+
+
+modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties
+添加一下内容：
+#zml add 高级查询中格式本地化
+msg.jsp.AdobeAcrobat 				= pdf 文件
+msg.jsp.AdobePostscript 			= ps 文件
+msg.jsp.MicrosoftWord 				= doc 文件
+msg.jsp.MicrosoftWord2007 			= docx 文件
+msg.jsp.OpenOfficeText 				= odf 文件
+msg.jsp.OpenOfficeCalc 				= ods 文件
+msg.jsp.WordPerfect 				= wpd 文件
+msg.jsp.RichTextFormat 				= rtf 文件
+
+（7）系统管理==》目录==》页面上有英文，是在页面写死的值，改成在资源文件中取值
+
+\modules\contineo-web\src\main\webapp\templates\admin\folders.jspx
+第29行  <ice:outputLabel for="userDir" value="#{msgs['userDir']}" />
+第39行  <ice:outputLabel for="docDir" value="#{msgs['docDir']}" />
+第49行  <ice:outputLabel for="indexDir" value="#{msgs['indexDir']}" />
+
+modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
+userDir = 用户目录:
+docDir = 文档目录:
+indexDir = 索引目录:
+
+（8）文档库中三级目录中的列表页在表格中添加操作显示
+\modules\contineo-web\src\main\webapp\templates\document\documents.jspx
+第78行： <ice:outputText value="#{msgs['msg.jsp.action']}" />
+
+modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
+msg.jsp.action                      = 操作
+
+（9）
+
+第35行：<ice:outputText value="#{msgs['SystemSetup']}"
+
+modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
+SystemSetup = 系统安装
+
+
+下面所写，是已经做了，但不够完善或者精确，还有的未知：
+12. 登录后首页两个单选按钮（已经做了对应汉化），当前语言文档和所有语言文档，想让其默认为所有文档   没有实现
+
+13. 文档库 ? 东方创远 ? 管理 ?签入 页面有英文  Upload FileName 修改了FileName 但Upload没有找到对应修改的位置未被修改
+\modules\contineo-web\src\main\webapp\templates\document\checkin.jspx
+第31行： <ice:outputText value="#{msgs['msg.jsp.FileName']}: #{inputFile.fileName}"
+
+modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
+msg.jsp.FileName                    = 文件名称
+
+Upload有待修改
+
+14.  日志中有 英文 （暂时不用考虑）
+
+15. 文档库 ? 东方创远 ? 管理 ?中  列表页针对文档  操作  的 以邮件发送和发送下载贴士 的取消和发送按钮的功能有待验证？？？？找个我个人觉得是操作问题，就看操作者怎么操作！
+
+16.  高级查询的使用 ？？？？根据页面大意理解，但实际具体怎么用未知
+
+17. 针对登录后的首页 在查询下面的单选按钮个人建议是隐藏，理由：这样不违反程序逻辑页面也美观
+
+18. 在测试过程中 很奇怪的现象就是我自己本地的不能下载文件，而62的可以，我没有弄明白是为什么，我把62的发布在我本机上发布也是这样的现象。
+
+19. 关于批量导入 没有弄明白是怎么回事，因为从概念上想 应该是很多文件一起上传，但我测试的时候知识单个文件，可能是操作问题。
+
+20.  用户名和密码不正确的提示信息：（说明：msg中的信息没有读取资源文件里的，只是写什么就显示什么，我没有得到验证是为什么没有读取资源文件而是直接取所写的值）
+
+\modules\contineo-web\src\main\java\org\contineo\web\LoginForm.java
+代码第81到83：
+            //zml edit Messages.addError(Messages.getMessage("Invalid username or password"));
+            //Messages.addError(Messages.getMessage("Invalidusernameorpassword"));
+            Messages.addError(Messages.getMessage("用户名或密码不正确！"));
+
+modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
+Invalidusernameorpassword = 用户名或密码不正确！
+
