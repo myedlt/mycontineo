@@ -16,7 +16,7 @@
 	spring 2.0.7
 	hibernate 
 	jsf 替换了Struts
-	iceFaces 引入AJAX特性
+	iceFaces 引入AJAX特性,1.6.2
 	lucene 2.3.2
 	JPF
 	Axis2-1.3 web service 开源项目，外部IT系统集成
