@@ -78,7 +78,9 @@ public class LoginForm {
         } else {
             logger.warn("User " + j_username + " is not valid.");
             //Messages.addError(Messages.getString("errors.action.password.mismatch"));
-            Messages.addError("Invalid username or password");
+            //zml edit Messages.addError(Messages.getMessage("Invalid username or password"));
+            //Messages.addError(Messages.getMessage("Invalidusernameorpassword"));
+            Messages.addError(Messages.getMessage("用户名或密码不正确！"));
 
             return "loginFailure";
         }
