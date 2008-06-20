@@ -70,7 +70,7 @@ PRIMARY KEY(co_messageid)
 );
 
 INSERT INTO co_users (co_username,co_password,co_name,co_firstname,co_street,co_postalcode,co_city,co_country,co_language,co_email,co_telephone)
-VALUES ('admin','d033e22ae348aeb566fc214aec3585c4da997','Admin','Admin','','','','','en','admin@admin.net','');
+VALUES ('admin','d033e22ae348aeb566fc214aec3585c4da997','Admin','Admin','','','','','zh','admin@admin.net','');
 
 CREATE TABLE co_document (
 co_docid INTEGER NOT NULL,
