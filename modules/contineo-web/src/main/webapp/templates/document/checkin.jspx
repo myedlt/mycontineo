@@ -28,7 +28,7 @@
 				progressListener="#{inputFile.progress}"
 				actionListener="#{inputFile.action}" />
 			<ice:outputProgress id="pro" value="#{inputFile.percent}" />
-			<ice:outputText value="File Name: #{inputFile.fileName}"
+			<ice:outputText value="#{msgs['msg.jsp.FileName']}: #{inputFile.fileName}"
 				style="padding-left:8px;" />
 			<br />
 
