@@ -46,7 +46,7 @@ function clearSearch(element, label) {
 				</tr>
 				<tr>
 					<td nowrap="nowrap" class="searchOptionsTD">
-					<div id="hidden" style="position:absolute;visibility:hidden;">
+
 						<ice:selectOneRadio value="#{searchForm.language}"
 							styleClass="searchOptions">
 							<f:selectItem
@@ -55,7 +55,7 @@ function clearSearch(element, label) {
 							<f:selectItem itemLabel="#{msgs['msg.jsp.search.allDocuments']}"
 								itemValue="all"/>
 						</ice:selectOneRadio>
-					</div>
+
 					</td>
 				</tr>
 			</tbody>
