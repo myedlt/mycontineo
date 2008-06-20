@@ -29,7 +29,7 @@ public class LanguageManager {
 	}
 
 	private void init() {
-		defaultLanguage = new Language(Locale.ENGLISH);
+		defaultLanguage = new Language(Locale.SIMPLIFIED_CHINESE);
 
 		languages.put("en", new Language(Locale.ENGLISH));
 		languages.put("it", new Language(Locale.ITALIAN));
