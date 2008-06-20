@@ -323,7 +323,7 @@ em { /*font-size:14px;*/
 /* encapsulates the tree element and restricts it to the given size */
 .treeContainer {
 	border: 1px solid #dedede;
-	width: 280px;
+	width: 225px;
 	height: 420px;
 	overflow: scroll;
 }
