@@ -1,4 +1,4 @@
-1. 简介：Contineo是基于Web的文档管理系统.它支持用户把文档处理成各种当前流行的格式,还可以与Office软件相结合来创建,修改文档.使用Contineo不仅可以发布,搜索,管理各种类型的文档,甚至可以与其它用户直接或通过Email相互交流.
+yo1. 简介：Contineo是基于Web的文档管理系统.它支持用户把文档处理成各种当前流行的格式,还可以与Office软件相结合来创建,修改文档.使用Contineo不仅可以发布,搜索,管理各种类型的文档,甚至可以与其它用户直接或通过Email相互交流.
 
 2. 下载 Contineo 3.0.3 源码：  https://sourceforge.net/project/showfiles.php?group_id=88385 (http://sourceforge.net/projects/contineo)
 
@@ -166,3 +166,38 @@ Upload有待修改
 modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
 Invalidusernameorpassword = 用户名或密码不正确！
 
+
+
+2008-06-20工作记录如下：
+
+1.主页面：在浏览器窗口中需左右移动，不好，修改树形视图宽度（css文件+Firebug firefox插件）
+安装好插件进行修改\modules\contineo-web\src\main\webapp\skins\default\css\style.css 
+第326行	width: 280px;修改为	width: 225px;
+
+2.登录页：默认语言改为中文，查询下的“英文文档”改为显示正确的语言名，参考登录页面
+原来以为是单一的文档，但只限是对业务和应用的不了解，现在知道此处的含义了，不是“英文文档”而是对应的语言的对应文档。也就是说登录进来的是中文此处显示中文文档，是什么语言就是什么语言文档。已经完成符合要求，修改内容如下：
+\modules\contineo-core\src\main\java\org\contineo\core\i18n\LanguageManager.java
+第32行代码：		
+原来为：defaultLanguage = new Language(Locale.ENGLISH);
+修改为：defaultLanguage = new Language(Locale.SIMPLIFIED_CHINESE);
+
+\modules\contineo-core\src\main\java\org\contineo\core\i18n\Language.java
+第12行代码：
+原来为：this.index = locale.getDisplayLanguage(Locale.ENGLISH).toLowerCase();
+修改为：this.index = locale.getDisplayLanguage(Locale.SIMPLIFIED_CHINESE).toLowerCase();
+
+\modules\contineo-web\src\main\webapp\WEB-INF\faces-config.xml
+第8行代码开始修改增加：
+原来为：<default-locale>en</default-locale>
+修改为：<default-locale>zh_CN</default-locale>  <supported-locale>en</supported-locale>
+
+最重要的是：要修改数据库co_users表的co_language的默认值为zh
+\modules\contineo-core\src\main\resources\org\contineo\core\contineo-core.sql
+第72行：INSERT INTO co_users (co_username,co_password,co_name,co_firstname,co_street,co_postalcode,co_city,co_country,co_language,co_email,co_telephone)
+VALUES ('admin','d033e22ae348aeb566fc214aec3585c4da997','Admin','Admin','','','','','zh','admin@admin.net','');
+
+
+3. session会话过期问题 [尚未解决]
+
+User Session Expired
+To reconnect click the Reload button on the browser or click the button below
