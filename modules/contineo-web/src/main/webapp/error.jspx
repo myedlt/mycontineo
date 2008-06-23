@@ -48,10 +48,10 @@
 						</td>
 						<td class="system_info" width="100%">
 							<br />
-							<ice:outputText styleClass="system_info">Sorry, a fatal error has occurred. The error has been logged.</ice:outputText>
+							<ice:outputText styleClass="system_info">#{msgs['error.jspx.msg1']}</ice:outputText>
 							<br />
 							<br />
-							<b><ice:outputLink styleClass="system_link" value="#{facesContext.externalContext.requestContextPath}/login.iface">Please log in again.</ice:outputLink></b> 
+							<b><ice:outputLink styleClass="system_link" value="#{facesContext.externalContext.requestContextPath}/login.iface">#{msgs['error.jspx.msg2']}</ice:outputLink></b> 
 						</td>
 					</tr>
 				</tbody>
