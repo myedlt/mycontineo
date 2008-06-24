@@ -1,4 +1,4 @@
-
+﻿
 1. 系统简介
 	Contineo是基于Web的文档管理系统.它支持用户把文档处理成各种当前流行的格式,还可以与Office软件相结合来创建,修改文档.
 	使用Contineo不仅可以发布,搜索,管理各种类型的文档,甚至可以与其它用户直接或通过Email相互交流.
@@ -11,7 +11,7 @@
 	基于Java开发
 		JDK1.6
 		spring 2.0.7 
-		hibernate【没有查到版本】，
+		hibernate 3.2.5，
 		jsf 【替换了Struts，早期版本用到了struts】，
 		iceFaces 引入AJAX特性
 		lucene 2.3.2【文档全文检索】
@@ -149,7 +149,7 @@
 	contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
 	msg.jsp.FileName                    = 文件名称
 	
-	修改了FileName 但Upload没有找到对应修改的位置未被修改，Upload有待修改(在别的机器上变现不一样)。
+	修改了FileName 但Upload没有找到对应修改的位置未被修改，Upload有待修改(在别的机器上展现不一样)。
 （11）用户名和密码不正确的提示信息
 	（说明：msg中的信息没有读取资源文件里的，只是写什么就显示什么，我没有得到验证是为什么没有读取资源文件而是直接取所写的值）
 
