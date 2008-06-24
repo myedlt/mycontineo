@@ -9,7 +9,7 @@
 
 3. 技术
 	基于Java开发
-		jDK1.6
+		JDK1.6
 		spring 2.0.7 
 		hibernate【没有查到版本】，
 		jsf 【替换了Struts，早期版本用到了struts】，
@@ -46,15 +46,19 @@
 		要求是4.1--5.0的版本，创建Mysql数据库为utf8，手工建库、建表;
 		Create DATABASE `contineo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci 
 
-
+	用户帮助的语言类别（由用户的数据库库中保存的语言决定）
+	
 5、本地化
 
 5.1 Java 本地化机制	
 	Contineo（文档管理系统）本身支持多语言，只需要做本地化。
 
 	contineo-web
-		src/main/resources/org.contineo.web.i18n  增加汉化文件application_zh_CN.properties 把里面对应的英文汉化为中文；
-
+		src/main/resources/org.contineo.web.i18n  	增加中文简体属性文件application_zh_CN.properties
+		src/main/webapp/skins/default			系统皮肤，可更换图片或调整css
+	contineo-help
+		src/help	增加中文简体目录zh_CN，拷贝en目录下的文件并翻译为中文，相应图片也需更换（应采用同样的图片格式）
+	
 5.2 硬编码修改
 
 （英文是页面写死的或者在java类中写死的，改为读取资源文件）
@@ -71,7 +75,7 @@
 	资源文件application_zh_CN.properties中添加内容为db.URL = 数据库驱动路径：db.Username = 用户名：db.Password = 密码：	
 （3）在安装页面的logo图片显示需要更换
 	更改图片在modules\contineo-web\src\main\webapp\skins\default\images 下 		
-	同时点击图片的链接地址一定要改，版本问题！
+	同时点击图片的链接地址一定要改，版权问题！
 	图片链接的修改在modules\contineo-web\src\main\webapp\templates\info.jspx 第32行
 （4）info.jspx这个是信息页面，也就是系统中 帮助中的关于，系统说明是在资源文件中汉化的，而下面的说明需要修改，改成公司简介。
 （5）info.jspx页面中读取modules\contineo-web\src\main\resources\context.properties 找个个文件里的内容
@@ -184,18 +188,24 @@
 		co_postalcode,co_city,co_country,co_language,co_email,co_telephone)
 	VALUES ('admin','d033e22ae348aeb566fc214aec3585c4da997','Admin','Admin','','','','','zh','admin@admin.net','');
 
-5.3 待办
-	系统日志中有 英文 （暂时不用考虑）
-
 6、待办与问题
+	中文文件名乱码（优先级高）
+	帮助中的图片改为与英文一致的gif
+	系统日志中有 英文 （暂时不用考虑）
 	帮助翻译不太好，需修订；
-	高级查询的使用 ？？？？根据页面大意理解，但实际具体怎么用未知；
-	针对登录后的首页 在查询下面的单选按钮个人建议是隐藏，理由：这样不违反程序逻辑页面也美观
+	高级查询的使用 ？？？？根据页面大意理解，但实际具体怎么用未知；（zhoul）
 	登录后首页两个单选按钮（已经做了对应汉化），当前语言文档和所有语言文档，想让其默认为所有文档   没有实现
-	在测试过程中 很奇怪的现象就是我自己本地的不能下载文件，而62的可以，我没有弄明白是为什么，我把62的发布在我本机上发布也是这样的现象。
-	关于批量导入 没有弄明白是怎么回事，因为从概念上想 应该是很多文件一起上传，但我测试的时候知识单个文件，可能是操作问题。
-	文档库 ? 东方创远 ? 管理 ?中  列表页针对文档 操作  的以邮件发送和发送下载贴士的取消和发送按钮的功能有待验证？？？？
+	在测试过程中 很奇怪的现象就是我自己本地的不能下载文件，而62的可以，我没有弄明白是为什么，我把62的发布在我本机上发布也是这样的现象（浏览器？）
+
+	文档库 ? 东方创远 ? 管理 ?中  列表页针对文档 操作  的以邮件发送和发送下载贴士的取消时显示"未填写..."
+		内部逻辑：取消时系统也执行了校验，定为bug，实际应该是取消时不校验（优先级低）
 	
-	session会话过期问题 [尚未解决]，
+	session会话过期问题 [尚未解决，优先级低]，
 		User Session Expired
 		To reconnect click the Reload button on the browser or click the button below
+	全文索引的问题
+		现象：
+			以英文登录时英文可以搜到
+			以中文登录时英文搜不到
+			以中文登录时中文搜不到
+			所有文档似乎不起作用
