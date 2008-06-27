@@ -3,6 +3,7 @@
 	 	create DATABASE `contineo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci 
  		jdbc:mysql://localhost:3306/contineo?useUnicode=true&characterEncoding=UTF-8
  	中文分词	?
+	服务器操作系统的语言设置会影响浏览器端的默认语言
 发布
 	1）手工
 		mvn install

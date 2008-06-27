@@ -24,3 +24,11 @@
 
 2008/6/23
  	文档翻译检查：adddocuments.html 完成,addfolder.html部分
+2008/6/24
+	帮助翻译审核
+		addsysmess
+		configsmtp
+		editdocument
+		emailaccounts
+		emaildocuments 部分
+	系统本地化和bug修改总结

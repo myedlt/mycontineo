@@ -29,14 +29,14 @@ public class LanguageManager {
 	}
 
 	private void init() {
-		defaultLanguage = new Language(Locale.SIMPLIFIED_CHINESE);
+		defaultLanguage = new Language(Locale.ENGLISH);
 
 		languages.put("en", new Language(Locale.ENGLISH));
 		languages.put("it", new Language(Locale.ITALIAN));
 		languages.put("de", new Language(Locale.GERMAN));
 		languages.put("es", new Language(new Locale("es")));
 		languages.put("fr", new Language(Locale.FRENCH));
-		languages.put("zh_CN", new Language(Locale.SIMPLIFIED_CHINESE));
+		languages.put("zh", new Language(Locale.CHINESE));
 		
 		// Acquire the 'Language' extensions of the core plugin and add defined languages
 		PluginRegistry registry = PluginRegistry.getInstance();
