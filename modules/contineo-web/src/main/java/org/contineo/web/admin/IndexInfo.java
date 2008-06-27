@@ -70,6 +70,7 @@ public class IndexInfo {
 				FileBean.deleteDir(path + "german/");
 				FileBean.deleteDir(path + "spanish/");
 				FileBean.deleteDir(path + "italian/");
+				FileBean.deleteDir(path + "chinese/");				
 
 				// Create all index directories(one per language)
 				FileBean.createDir(path + "english/");
@@ -77,6 +78,7 @@ public class IndexInfo {
 				FileBean.createDir(path + "german/");
 				FileBean.createDir(path + "spanish/");
 				FileBean.createDir(path + "italian/");
+				FileBean.createDir(path + "chinese/");
 
 				Indexer indexer = (Indexer) Context.getInstance().getBean(Indexer.class);
 				indexer.createIndexes();

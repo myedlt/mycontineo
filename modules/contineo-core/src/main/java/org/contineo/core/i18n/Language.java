@@ -9,7 +9,7 @@ public class Language {
 	
 	public Language(Locale locale) {
 		this.locale = locale;
-		this.index = locale.getDisplayLanguage(Locale.SIMPLIFIED_CHINESE).toLowerCase();
+		this.index = locale.getDisplayLanguage(Locale.ENGLISH).toLowerCase();
 	}
 
 	public Locale getLocale() {

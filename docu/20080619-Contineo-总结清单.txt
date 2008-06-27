@@ -141,7 +141,7 @@ SystemSetup = 系统安装
 modules\contineo-web\src\main\resources\org\contineo\web\i18n\application_zh_CN.properties 添加一下内容：
 msg.jsp.FileName                    = 文件名称
 
-Upload有待修改
+Upload有待修改(在别的机器上变现不一样)
 
 14.  日志中有 英文 （暂时不用考虑）
 
