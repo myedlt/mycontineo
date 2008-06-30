@@ -481,7 +481,9 @@ public class DocumentEditForm {
 				}
 			} catch (Exception e) {
 				log.error(e.getMessage(), e);
-				Messages.addMessage(FacesMessage.SEVERITY_ERROR, "errors.action.savedoc", "errors.action.savedoc");
+				
+				Messages.addMessage(FacesMessage.SEVERITY_ERROR, Messages.getMessage("errors.action.savedoc"),
+						Messages.getMessage("errors.action.savedoc"));
 			} finally {
 				reset();
 			}
