@@ -41,4 +41,9 @@ contineo-web/
 			WEB-INF/
 				boot.properties
 				faces-config.xml	语言设置
+分词器
+	org.contineo.core.searchengine.crawler.LuceneAnalyzerFactory.java 
+		28行SnowballAnalyzer构造函数构造分词器，但实际上没有对应中文的类
+		只此一处用到SnowballAnalyzer，可用CJKAnalyzer替换
+		建索引和输入查询条件的分词都通过此处
 			
