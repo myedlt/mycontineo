@@ -50,7 +50,7 @@
 		<property name="mimeTypes">
 			<props>
 				<prop key="pdf">application/pdf</prop>
-				<prop key="doc">application/msword</prop>
+				<prop key="doc">application/doc</prop>
 				<prop key="dot">application/msword</prop>
 				<prop key="sxw">application/vnd.sun.xml.writer</prop>
 				<prop key="stw">application/vnd.sun.xml.writer.template</prop>
@@ -67,9 +67,9 @@
 				<prop key="kpr">application/x-kpresenter</prop>
 				<prop key="rtf">text/rtf</prop>
 				<prop key="ps">application/postscript</prop>
-				<prop key="xls">application/msexcel</prop>
+				<prop key="xls">application/xls</prop>
 				<prop key="xlt">application/msexcel</prop>
-				<prop key="ppt">application/mspowerpoint</prop>
+				<prop key="ppt">application/ppt</prop>
 				<prop key="pps">application/mspowerpoint</prop>
 				<prop key="pot">application/mspowerpoint</prop>
 				<prop key="html">text/html</prop>
