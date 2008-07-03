@@ -139,24 +139,32 @@ public class Result implements Serializable, ResultInterface {
 	public void setType(String typ) {
 		type = typ;
 		icon = "";
-
+		// zml edit 分离出常用的文件格式及对应图片
 		if (type.equals("PDF")) {
 			icon = "pdf.gif";
-		} else if (type.equals("DOC") || type.equals("DOT") || type.equals("RTF") || type.equals("SXW")
-				|| type.equals("TXT") || type.equals("WPD") || type.equals("KWD") || type.equals("ABW")
+		} else if (type.equals("DOC")) {
+			icon = "doc.gif";
+		} else if (type.equals("TXT") ) {
+			icon = "txt.gif";
+		} else if (type.equals("XLS")) {
+			icon = "xls.gif";
+		} else if (type.equals("PPT")) {
+			icon = "ppt.gif";
+		} else if (type.equals("DOT") || type.equals("RTF") || type.equals("SXW") || type.equals("XML")
+				|| type.equals("WPD") || type.equals("KWD") || type.equals("ABW")
 				|| type.equals("ZABW") || type.equals("ODT")) {
 			icon = "textdoc.gif";
-		} else if (type.equals("XLS") || type.equals("XLT") || type.equals("SXC") || type.equals("DBF")
+		} else if (type.equals("XLT") || type.equals("SXC") || type.equals("DBF")
 				|| type.equals("KSP") || type.equals("ODS") || type.equals("ODB")) {
 			icon = "tabledoc.gif";
-		} else if (type.equals("PPT") || type.equals("PPS") || type.equals("POT") || type.equals("SXI")
+		} else if (type.equals("PPS") || type.equals("POT") || type.equals("SXI")
 				|| type.equals("KPR") || type.equals("ODP")) {
 			icon = "presentdoc.gif";
 		} else if (type.equals("APF") || type.equals("BMP") || type.equals("JPEG") || type.equals("DIB")
 				|| type.equals("GIF") || type.equals("JPG") || type.equals("PSD") || type.equals("TIF")
 				|| type.equals("TIFF")) {
 			icon = "picture.gif";
-		} else if (type.equals("HTM") || type.equals("HTML") || type.equals("XML")) {
+		} else if (type.equals("HTM") || type.equals("HTML")) {
 			icon = "internet.gif";
 		} else {
 			icon = "document.gif";

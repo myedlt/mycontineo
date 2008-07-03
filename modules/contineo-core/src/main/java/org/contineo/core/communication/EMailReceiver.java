@@ -359,7 +359,8 @@ public class EMailReceiver {
 			fos.close();
 
 			String icon = "";
-			if (mimeType.equals("text/plain") || mimeType.equals("text/rtf") || mimeType.equals("application/msword")
+			// zml edit 分离出常用的文件格式及对应图片
+			if (mimeType.equals("text/rtf") || mimeType.equals("application/msword")
 					|| mimeType.equals("application/vnd.sun.xml.writer")) {
 				icon = "textdoc.gif";
 			} else if (mimeType.equals("application/msexcel") || mimeType.equals("application/vnd.sun.xml.calc")) {
@@ -369,6 +370,14 @@ public class EMailReceiver {
 				icon = "presentdoc.gif";
 			} else if (mimeType.equals("application/pdf")) {
 				icon = "pdf.gif";
+			} else if (mimeType.equals("text/plain")) {
+				icon = "txt.gif";
+			} else if (mimeType.equals("application/doc")) {
+				icon = "doc.gif";
+			} else if (mimeType.equals("application/xls")) {
+				icon = "xls.gif";
+			} else if (mimeType.equals("application/ppt")) {
+				icon = "ppt.gif";
 			} else if (mimeType.equals("text/html")) {
 				icon = "internet.gif";
 			} else {
