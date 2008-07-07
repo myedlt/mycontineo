@@ -88,7 +88,7 @@
 
 
 		<ice:panelGroup styleClass="commands">
-			<ice:commandButton value="#{msgs['abort']}"
+			<ice:commandButton value="#{msgs['abort']}" partialSubmit="true"
 				action="#{newDocWizard.abort}" />
 			<ice:commandButton value="#{msgs['msg.jsp.send']}"
 				action="#{emailForm.send}" />
