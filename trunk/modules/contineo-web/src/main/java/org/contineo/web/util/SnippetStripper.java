@@ -35,7 +35,7 @@ public class SnippetStripper {
 	 * @return
 	 */
 	public static String strip(String snippet) {
-		String summary = snippet;
+		/*String summary = snippet;
 		// Escape all tag delimiters to avoid bad markup in the results page
 		summary = summary.replaceAll("<", "&lt;");
 		summary = summary.replaceAll(">", "&gt;");
@@ -59,8 +59,11 @@ public class SnippetStripper {
 
 		// maintain all characters compatible with explorer
 		outString = outString.replaceAll("[^" + UNICODE_BASIC_LATIN + UNICODE_LATIN_1 + UNICODE_LATIN_EXTENDED_A + "]",
-				" ");
-
+				" ");*/
+		
+		// 支持中文检索的相关修改
+		String outString=snippet;
+		
 		return outString;
 	}
 }
