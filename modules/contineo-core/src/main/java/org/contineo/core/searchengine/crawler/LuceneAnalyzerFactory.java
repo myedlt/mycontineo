@@ -24,7 +24,9 @@ public class LuceneAnalyzerFactory {
 		Collection<Language> languages = LanguageManager.getInstance().getLanguages();
 		for (Language language : languages) {
 			String[] stopwords = Stopwords.getStopwords(language.getLanguage());
-			SnowballAnalyzer analyzer = new SnowballAnalyzer(language.getLocale().getDisplayName(Locale.ENGLISH), stopwords);
+			//SnowballAnalyzer analyzer = new SnowballAnalyzer(language.getLocale().getDisplayName(Locale.ENGLISH), stopwords);
+			// 支持中文检索的相关修改
+			SnowballAnalyzer analyzer = new SnowballAnalyzer("English", stopwords);
 			analyzers.put(language.getLanguage(), analyzer);
 		}
 	}
