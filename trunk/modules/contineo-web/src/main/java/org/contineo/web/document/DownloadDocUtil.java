@@ -121,7 +121,7 @@ public class DownloadDocUtil {
         // response object
         response.setContentType(mimetype);
         response.setHeader("Content-Disposition",
-            "attachment; filename=\"" + menuref + "\"");
+            "attachment; filename=\"" + new String(menuref.getBytes("GBK"),"iso8859-1") + "\"");
 
         // Headers required by Internet Explorer
         response.setHeader("Pragma", "public");
