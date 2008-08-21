@@ -6,13 +6,16 @@
 	服务器操作系统的语言设置会影响浏览器端的默认语言
 发布
 	1）手工
-		mvn install
+		mvn install 
 		手动将war包发布到tomcat目录；
 	2）自动
 		web应用=》contineo-web：  		ant update（默认）
 		语言插件=》contineo-lang-pt：	ant deploy
 	3）contineo-lang-pt
 		顶层pom.xml中没有包含该模块，需手动编译 mvn install，然后ant deploy
+	
+	说明：mvn clean
+	
 技术
 	spring 2.0.7
 	hibernate 
