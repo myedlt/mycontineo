@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+1
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="gif_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+	if(parent.isUpLevel)
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 10;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.687310;
+	viewMgr.visBBoxRight = 7.580407;
+	viewMgr.visBBoxBottom = 7.578609;
+	viewMgr.visBBoxTop = 10.823403;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="gif_8.gif" ALT="考试申请" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="未通过" origTitle="未通过" TITLE="未通过"  target="_top" COORDS=" 358,251 407,251 407,160 358,160 358,251" onmouseover="UpdateTooltip(this,10,10)" onfocus="UpdateTooltip(this,10,10)" onclick="return OnShapeClick(10,10);" onkeyup="OnShapeKey(10,10);">
+  <AREA shape="POLYGON" tabindex="1" ALT="提出鉴定考试申请" origTitle="提出鉴定考试申请" TITLE="提出鉴定考试申请"  target="_top" COORDS=" 256,65 426,65 426,13 256,13 256,65" onmouseover="UpdateTooltip(this,10,4)" onfocus="UpdateTooltip(this,10,4)" onclick="return OnShapeClick(10,4);" onkeyup="OnShapeKey(10,4);">
+  <AREA shape="POLYGON" tabindex="1" ALT="考试申请" origTitle="考试申请" TITLE="考试申请"  target="_top" COORDS=" 0,159 171,159 171,104 0,104 0,159" onmouseover="UpdateTooltip(this,10,3)" onfocus="UpdateTooltip(this,10,3)" onclick="return OnShapeClick(10,3);" onkeyup="OnShapeKey(10,3);">
+  <AREA shape="POLYGON" tabindex="1" ALT="职业技能鉴定考试申请表" origTitle="职业技能鉴定考试申请表" TITLE="职业技能鉴定考试申请表"  target="_top" COORDS=" 573,132 568,132 568,162 663,162 663,132 658,132 658,130 573,130 573,132" onmouseover="UpdateTooltip(this,10,2)" onfocus="UpdateTooltip(this,10,2)" onclick="return OnShapeClick(10,2);" onkeyup="OnShapeKey(10,2);">
+  <AREA shape="POLYGON" tabindex="1" ALT="通过" origTitle="通过" TITLE="通过"  target="_top" COORDS=" 263,251 313,251 313,160 263,160 263,251" onmouseover="UpdateTooltip(this,10,1)" onfocus="UpdateTooltip(this,10,1)" onclick="return OnShapeClick(10,1);" onkeyup="OnShapeKey(10,1);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+

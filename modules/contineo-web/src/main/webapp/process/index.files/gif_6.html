@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+1
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="gif_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+	if(parent.isUpLevel)
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 8;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.697152;
+	viewMgr.visBBoxRight = 7.590249;
+	viewMgr.visBBoxBottom = 6.753730;
+	viewMgr.visBBoxTop = 9.998238;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="gif_6.gif" ALT="教学安排" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="人资处" origTitle="人资处" TITLE="人资处"  target="_top" COORDS=" 237,218 286,218 286,127 237,127 237,218" onmouseover="UpdateTooltip(this,8,12)" onfocus="UpdateTooltip(this,8,12)" onclick="return OnShapeClick(8,12);" onkeyup="OnShapeKey(8,12);">
+  <AREA shape="POLYGON" tabindex="1" ALT="培训管理" origTitle="培训管理" TITLE="培训管理"  target="_top" COORDS=" 358,218 407,218 407,127 358,127 358,218" onmouseover="UpdateTooltip(this,8,10)" onfocus="UpdateTooltip(this,8,10)" onclick="return OnShapeClick(8,10);" onkeyup="OnShapeKey(8,10);">
+  <AREA shape="POLYGON" tabindex="1" ALT="制定教学进度计划" origTitle="制定教学进度计划" TITLE="制定教学进度计划"  target="_top" COORDS=" 246,65 417,65 417,12 246,12 246,65" onmouseover="UpdateTooltip(this,8,5)" onfocus="UpdateTooltip(this,8,5)" onclick="return OnShapeClick(8,5);" onkeyup="OnShapeKey(8,5);">
+  <AREA shape="POLYGON" tabindex="1" ALT="教学安排" origTitle="教学安排" TITLE="教学安排"  target="_top" COORDS=" 0,158 171,158 171,104 0,104 0,158" onmouseover="UpdateTooltip(this,8,4)" onfocus="UpdateTooltip(this,8,4)" onclick="return OnShapeClick(8,4);" onkeyup="OnShapeKey(8,4);">
+  <AREA shape="POLYGON" tabindex="1" ALT="远程培训授课计划" origTitle="远程培训授课计划" TITLE="远程培训授课计划"  target="_top" COORDS=" 630,93 663,93 663,63 658,63 658,58 573,58 573,63 568,63 568,93 601,93 601,95 630,95 630,93" onmouseover="UpdateTooltip(this,8,3)" onfocus="UpdateTooltip(this,8,3)" onclick="return OnShapeClick(8,3);" onkeyup="OnShapeKey(8,3);">
+  <AREA shape="POLYGON" tabindex="1" ALT="授课教师" origTitle="授课教师" TITLE="授课教师"  target="_top" COORDS=" 297,218 347,218 347,127 297,127 297,218" onmouseover="UpdateTooltip(this,8,2)" onfocus="UpdateTooltip(this,8,2)" onclick="return OnShapeClick(8,2);" onkeyup="OnShapeKey(8,2);">
+  <AREA shape="POLYGON" tabindex="1" ALT="教学进度计划" origTitle="教学进度计划" TITLE="教学进度计划"  target="_top" COORDS=" 568,188 663,188 663,157 568,157 568,188" onmouseover="UpdateTooltip(this,8,1)" onfocus="UpdateTooltip(this,8,1)" onclick="return OnShapeClick(8,1);" onkeyup="OnShapeKey(8,1);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+

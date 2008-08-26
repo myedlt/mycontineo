@@ -1,0 +1,199 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" 
+ xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>1</title>
+<style type="text/css">
+	 v\:* { behavior: url(#default#VML); }
+</style>
+
+<script src="vml_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+
+	var pageID = 5;
+	var viewMgr = null;
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+	function getPNZ()
+	{
+		var rawHTML = VMLDiv.innerHTML;
+		var strReturn = ""
+		
+		strReturn = rawHTML.slice( rawHTML.indexOf( '<v:group' ), rawHTML.indexOf( "</v:shape>" ) );
+		strReturn += "</v:shape></v:group>\n";
+				
+		return strReturn;
+	}
+	
+	function load()
+	{
+		viewMgr = new parent.CViewMgr("ConvertedImage", "arrowDiv");
+
+		viewMgr.put_Location = ViewMgrSetVMLLocation;
+
+
+		viewMgr.visBBoxLeft = 0.588885;
+		viewMgr.visBBoxRight = 7.993793;
+		viewMgr.visBBoxBottom = 7.110489;
+		viewMgr.visBBoxTop = 10.350962;
+
+		viewMgr.Zoom = VMLZoomChange;
+		viewMgr.setView= VMLSetView;
+
+		viewMgr.SupportsDetails = true;
+		viewMgr.SupportsSearch = true;
+
+		parent.viewMgr = viewMgr;
+
+		fit();
+	}
+
+	function unload()
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+
+	function fit()
+	{
+		if(parent.frmToolbar)
+		{
+			if (parent.g_WidgetsLoaded)
+			{
+				var zoom100 = parent.frmToolbar.document.all('a100');
+				if (zoom100)
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					zoom100.click();
+				}
+				else
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					viewMgr.Zoom(100);
+				}
+			}
+			else
+			{
+				window.setTimeout("fit()", 500);
+			}
+		}	
+		else
+		{
+			parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+			viewMgr.Zoom(100);
+		}
+	}
+
+	function PostZoomProcessing (newZoomLevel)
+	{
+		parent.viewMgr.PostZoomProcessing = null;
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.viewMgr.getPNZ = getPNZ;
+		parent.CurPageUpdate (pageIndex);
+	}
+
+
+	
+	var isUpLevel = parent.isUpLevel;
+	var OnShapeClick = parent.OnShapeClick;
+	var OnShapeKey = parent.OnShapeKey;
+	var UpdateTooltip = parent.UpdateTooltip;
+	var clickMenu = parent.clickMenu;
+	var toggleMenuDiv = parent.toggleMenuDiv;
+	var toggleMenuLink = parent.toggleMenuLink;
+	var GoToPage = parent.GoToPage;
+
+	window.onload = load;
+	window.onunload = unload;
+	document.onclick = clickMenu;
+
+
+
+
+</script>
+
+</head>
+
+<body style="MARGIN:10px" onresize="VMLOnResize();" onscroll="VMLOnScroll();">
+
+<div id="arrowdiv" style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+
+
+
+<div id="VMLDiv" >
+
+
+<v:group  id="ConvertedImage" style="width:9.140527in;height:4.000000in;position:absolute;visibility=hidden;" coordSize="4570,2000" coordOrigin="-1000,-1000" >
+
+<v:shapetype 
+  id="VISSHAPE"
+  target="_parent"
+  coordsize="4570,2000"
+  coordorigin="-1000,-1000"
+  stroked="f"
+  strokecolor="red"
+  filled="t"
+>
+<v:fill opacity="0.0"/>
+</v:shapetype>
+
+
+<v:shape style="top:-1000.0;left:-1000.0;width:4570.3;height:2000.0;position:absolute" coordSize="4570,2000" coordOrigin="-1000,-1000" >
+<v:imagedata src="vml_3.emz"/>
+</v:shape>
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/download?menuId=36" tabindex="1" title="网络课程录制任务单" origTitle="网络课程录制任务单"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 2674,21 l 2640,21 l 2640,214 l 3245,214 l 3245,21 l 3211,21 l 3211,11 l 2674,11 l 2674,21xe" onmouseover="UpdateTooltip(this,5,1)" onclick="OnShapeClick(5,1)" onfocus="UpdateTooltip(this,5,1);" onkeyup="OnShapeKey(5,1)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="网络课程录制计划" origTitle="网络课程录制计划"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 2674,-252 l 2640,-252 l 2640,-60 l 3245,-60 l 3245,-252 l 3211,-252 l 3211,-262 l 2674,-262 l 2674,-252xe" onmouseover="UpdateTooltip(this,5,2)" onclick="OnShapeClick(5,2)" onfocus="UpdateTooltip(this,5,2);" onkeyup="OnShapeKey(5,2)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/download?menuId=35" tabindex="1" title="网络课程开发任务书" origTitle="网络课程开发任务书"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 2674,-532 l 2640,-532 l 2640,-340 l 3245,-340 l 3245,-532 l 3211,-532 l 3211,-542 l 2674,-542 l 2674,-532xe" onmouseover="UpdateTooltip(this,5,3)" onclick="OnShapeClick(5,3)" onfocus="UpdateTooltip(this,5,3);" onkeyup="OnShapeKey(5,3)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/download?menuId=33" tabindex="1" title="网络课程开发及录制要求" origTitle="网络课程开发及录制要求"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 2674,337 l 2640,337 l 2640,530 l 3245,530 l 3245,337 l 3211,337 l 3211,327 l 2674,327 l 2674,337xe" onmouseover="UpdateTooltip(this,5,4)" onclick="OnShapeClick(5,4)" onfocus="UpdateTooltip(this,5,4);" onkeyup="OnShapeKey(5,4)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="多媒体教室管理规定" origTitle="多媒体教室管理规定"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 2674,-842 l 2640,-842 l 2640,-650 l 3245,-650 l 3245,-842 l 3211,-842 l 3211,-853 l 2674,-853 l 2674,-842xe" onmouseover="UpdateTooltip(this,5,5)" onclick="OnShapeClick(5,5)" onfocus="UpdateTooltip(this,5,5);" onkeyup="OnShapeKey(5,5)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="协调落实培训资源" origTitle="协调落实培训资源"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m -989,17 l 99,17 l 99,-329 l -989,-329 l -989,17xe" onmouseover="UpdateTooltip(this,5,6)" onclick="OnShapeClick(5,6)" onfocus="UpdateTooltip(this,5,6);" onkeyup="OnShapeKey(5,6)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="落实教师教材和培训设备、设施" origTitle="落实教师教材和培训设备、设施"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 462,9 l 1551,9 l 1551,-321 l 462,-321 l 462,9xe" onmouseover="UpdateTooltip(this,5,7)" onclick="OnShapeClick(5,7)" onfocus="UpdateTooltip(this,5,7);" onkeyup="OnShapeKey(5,7)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/download?menuId=35" tabindex="1" title="下载" origTitle="下载"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 3507,-450 l 3560,-450 l 3560,-527 l 3507,-527 l 3507,-538 l 3370,-538 l 3370,-527 l 3318,-527 l 3318,-450 l 3370,-450 l 3370,-446 l 3507,-446 l 3507,-450xe" onmouseover="UpdateTooltip(this,5,14)" onclick="OnShapeClick(5,14)" onfocus="UpdateTooltip(this,5,14);" onkeyup="OnShapeKey(5,14)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/main.iface?rvn=2#" tabindex="1" title="查看" origTitle="查看"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 3507,-344 l 3560,-344 l 3560,-421 l 3507,-421 l 3507,-432 l 3370,-432 l 3370,-421 l 3318,-421 l 3318,-344 l 3370,-344 l 3370,-340 l 3507,-340 l 3507,-344xe" onmouseover="UpdateTooltip(this,5,15)" onclick="OnShapeClick(5,15)" onfocus="UpdateTooltip(this,5,15);" onkeyup="OnShapeKey(5,15)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/download?menuId=35" tabindex="1" title="下载" origTitle="下载"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 3507,103 l 3560,103 l 3560,26 l 3507,26 l 3507,16 l 3370,16 l 3370,26 l 3318,26 l 3318,103 l 3370,103 l 3370,107 l 3507,107 l 3507,103xe" onmouseover="UpdateTooltip(this,5,16)" onclick="OnShapeClick(5,16)" onfocus="UpdateTooltip(this,5,16);" onkeyup="OnShapeKey(5,16)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/main.iface?rvn=2#" tabindex="1" title="查看" origTitle="查看"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 3507,209 l 3560,209 l 3560,132 l 3507,132 l 3507,122 l 3370,122 l 3370,132 l 3318,132 l 3318,209 l 3370,209 l 3370,213 l 3507,213 l 3507,209xe" onmouseover="UpdateTooltip(this,5,17)" onclick="OnShapeClick(5,17)" onfocus="UpdateTooltip(this,5,17);" onkeyup="OnShapeKey(5,17)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/download?menuId=35" tabindex="1" title="下载" origTitle="下载"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 3507,419 l 3560,419 l 3560,342 l 3507,342 l 3507,332 l 3370,332 l 3370,342 l 3318,342 l 3318,419 l 3370,419 l 3370,423 l 3507,423 l 3507,419xe" onmouseover="UpdateTooltip(this,5,18)" onclick="OnShapeClick(5,18)" onfocus="UpdateTooltip(this,5,18);" onkeyup="OnShapeKey(5,18)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="/contineo/main.iface?rvn=2#" tabindex="1" title="查看" origTitle="查看"  style="top:-1000;left:-1000;width:4570;height:2000;position:absolute" path=" m 3507,525 l 3560,525 l 3560,448 l 3507,448 l 3507,438 l 3370,438 l 3370,448 l 3318,448 l 3318,525 l 3370,525 l 3370,529 l 3507,529 l 3507,525xe" onmouseover="UpdateTooltip(this,5,19)" onclick="OnShapeClick(5,19)" onfocus="UpdateTooltip(this,5,19);" onkeyup="OnShapeKey(5,19)"/> 
+
+</v:group>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+
