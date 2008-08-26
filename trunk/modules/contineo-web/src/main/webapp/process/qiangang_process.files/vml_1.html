@@ -1,0 +1,215 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" 
+ xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>迁钢公司职业技能鉴定培训管理流程</title>
+<style type="text/css">
+	 v\:* { behavior: url(#default#VML); }
+</style>
+
+<script src="vml_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+
+	var pageID = 16;
+	var viewMgr = null;
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+	function getPNZ()
+	{
+		var rawHTML = VMLDiv.innerHTML;
+		var strReturn = ""
+		
+		strReturn = rawHTML.slice( rawHTML.indexOf( '<v:group' ), rawHTML.indexOf( "</v:shape>" ) );
+		strReturn += "</v:shape></v:group>\n";
+				
+		return strReturn;
+	}
+	
+	function load()
+	{
+		viewMgr = new parent.CViewMgr("ConvertedImage", "arrowDiv");
+
+		viewMgr.put_Location = ViewMgrSetVMLLocation;
+
+
+		viewMgr.visBBoxLeft = 0.273924;
+		viewMgr.visBBoxRight = 7.481982;
+		viewMgr.visBBoxBottom = 3.874083;
+		viewMgr.visBBoxTop = 11.532057;
+
+		viewMgr.Zoom = VMLZoomChange;
+		viewMgr.setView= VMLSetView;
+
+		viewMgr.SupportsDetails = true;
+		viewMgr.SupportsSearch = true;
+
+		parent.viewMgr = viewMgr;
+
+		fit();
+	}
+
+	function unload()
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+
+	function fit()
+	{
+		if(parent.frmToolbar)
+		{
+			if (parent.g_WidgetsLoaded)
+			{
+				var zoom100 = parent.frmToolbar.document.all('a100');
+				if (zoom100)
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					zoom100.click();
+				}
+				else
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					viewMgr.Zoom(100);
+				}
+			}
+			else
+			{
+				window.setTimeout("fit()", 500);
+			}
+		}	
+		else
+		{
+			parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+			viewMgr.Zoom(100);
+		}
+	}
+
+	function PostZoomProcessing (newZoomLevel)
+	{
+		parent.viewMgr.PostZoomProcessing = null;
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.viewMgr.getPNZ = getPNZ;
+		parent.CurPageUpdate (pageIndex);
+	}
+
+
+	
+	var isUpLevel = parent.isUpLevel;
+	var OnShapeClick = parent.OnShapeClick;
+	var OnShapeKey = parent.OnShapeKey;
+	var UpdateTooltip = parent.UpdateTooltip;
+	var clickMenu = parent.clickMenu;
+	var toggleMenuDiv = parent.toggleMenuDiv;
+	var toggleMenuLink = parent.toggleMenuLink;
+	var GoToPage = parent.GoToPage;
+
+	window.onload = load;
+	window.onunload = unload;
+	document.onclick = clickMenu;
+
+
+
+
+</script>
+
+</head>
+
+<body style="MARGIN:10px" onresize="VMLOnResize();" onscroll="VMLOnScroll();">
+
+<div id="arrowdiv" style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+
+
+
+<div id="VMLDiv" >
+
+
+<v:group  id="ConvertedImage" style="width:3.764995in;height:4.000000in;position:absolute;visibility=hidden;" coordSize="1882,2000" coordOrigin="-1000,-1000" >
+
+<v:shapetype 
+  id="VISSHAPE"
+  target="_parent"
+  coordsize="1882,2000"
+  coordorigin="-1000,-1000"
+  stroked="f"
+  strokecolor="red"
+  filled="t"
+>
+<v:fill opacity="0.0"/>
+</v:shapetype>
+
+
+<v:shape style="top:-1000.0;left:-1000.0;width:1882.5;height:2000.0;position:absolute" coordSize="1882,2000" coordOrigin="-1000,-1000" >
+<v:imagedata src="vml_1.emz"/>
+</v:shape>
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="输入帐号密码" origTitle="输入帐号密码"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -812,-449 l -862,-478 l -913,-449 l -953,-449 l -953,-425 l -996,-400 l -862,-321 l -729,-400 l -772,-425 l -772,-449 l -812,-449xe" onmouseover="UpdateTooltip(this,16,4)" onclick="OnShapeClick(16,4)" onfocus="UpdateTooltip(this,16,4);" onkeyup="OnShapeKey(16,4)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_13.html" tabindex="1" title="费用结转" origTitle="费用结转"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,971 l 801,971 l 801,900 l 545,900 l 545,971xe" onmouseover="UpdateTooltip(this,16,13)" onclick="OnShapeClick(16,13)" onfocus="UpdateTooltip(this,16,13);" onkeyup="OnShapeKey(16,13)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_12.html" tabindex="1" title="办理证书" origTitle="办理证书"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,848 l 801,848 l 801,777 l 545,777 l 545,848xe" onmouseover="UpdateTooltip(this,16,14)" onclick="OnShapeClick(16,14)" onfocus="UpdateTooltip(this,16,14);" onkeyup="OnShapeKey(16,14)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_11.html" tabindex="1" title="成绩登录" origTitle="成绩登录"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,741 l 801,741 l 801,671 l 545,671 l 545,741xe" onmouseover="UpdateTooltip(this,16,15)" onclick="OnShapeClick(16,15)" onfocus="UpdateTooltip(this,16,15);" onkeyup="OnShapeKey(16,15)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_10.html" tabindex="1" title="考试组织" origTitle="考试组织"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,603 l 801,603 l 801,532 l 545,532 l 545,603xe" onmouseover="UpdateTooltip(this,16,16)" onclick="OnShapeClick(16,16)" onfocus="UpdateTooltip(this,16,16);" onkeyup="OnShapeKey(16,16)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_9.html" tabindex="1" title="试题准备" origTitle="试题准备"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,472 l 801,472 l 801,401 l 545,401 l 545,472xe" onmouseover="UpdateTooltip(this,16,17)" onclick="OnShapeClick(16,17)" onfocus="UpdateTooltip(this,16,17);" onkeyup="OnShapeKey(16,17)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_8.html" tabindex="1" title="考试申请" origTitle="考试申请"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,334 l 801,334 l 801,263 l 545,263 l 545,334xe" onmouseover="UpdateTooltip(this,16,18)" onclick="OnShapeClick(16,18)" onfocus="UpdateTooltip(this,16,18);" onkeyup="OnShapeKey(16,18)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_7.html" tabindex="1" title="培训实施" origTitle="培训实施"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,201 l 801,201 l 801,130 l 545,130 l 545,201xe" onmouseover="UpdateTooltip(this,16,19)" onclick="OnShapeClick(16,19)" onfocus="UpdateTooltip(this,16,19);" onkeyup="OnShapeKey(16,19)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_6.html" tabindex="1" title="教学安排" origTitle="教学安排"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,77 l 801,77 l 801,6 l 545,6 l 545,77xe" onmouseover="UpdateTooltip(this,16,20)" onclick="OnShapeClick(16,20)" onfocus="UpdateTooltip(this,16,20);" onkeyup="OnShapeKey(16,20)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_5.html" tabindex="1" title="组织报名" origTitle="组织报名"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,-38 l 801,-38 l 801,-109 l 545,-109 l 545,-38xe" onmouseover="UpdateTooltip(this,16,21)" onclick="OnShapeClick(16,21)" onfocus="UpdateTooltip(this,16,21);" onkeyup="OnShapeKey(16,21)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_4.html" tabindex="1" title="培训项目策划" origTitle="培训项目策划"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,-162 l 801,-162 l 801,-233 l 545,-233 l 545,-162xe" onmouseover="UpdateTooltip(this,16,22)" onclick="OnShapeClick(16,22)" onfocus="UpdateTooltip(this,16,22);" onkeyup="OnShapeKey(16,22)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_3.html" tabindex="1" title="协调落实培训资源" origTitle="协调落实培训资源"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 709,-286 l 801,-286 l 801,-357 l 782,-357 l 782,-372 l 565,-372 l 565,-357 l 545,-357 l 545,-286 l 637,-286 l 637,-277 l 709,-277 l 709,-286xe" onmouseover="UpdateTooltip(this,16,23)" onclick="OnShapeClick(16,23)" onfocus="UpdateTooltip(this,16,23);" onkeyup="OnShapeKey(16,23)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_2.html" tabindex="1" title="确定培训需求" origTitle="确定培训需求"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 545,-428 l 801,-428 l 801,-498 l 545,-498 l 545,-428xe" onmouseover="UpdateTooltip(this,16,24)" onclick="OnShapeClick(16,24)" onfocus="UpdateTooltip(this,16,24);" onkeyup="OnShapeKey(16,24)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="迁钢公司职业技能鉴定培训管理流程" origTitle="迁钢公司职业技能鉴定培训管理流程"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -466,241 l -153,241 l -153,131 l -466,131 l -466,241xe" onmouseover="UpdateTooltip(this,16,25)" onclick="OnShapeClick(16,25)" onfocus="UpdateTooltip(this,16,25);" onkeyup="OnShapeKey(16,25)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="登录首页" origTitle="登录首页"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -990,-571 l -734,-571 l -734,-684 l -990,-684 l -990,-571xe" onmouseover="UpdateTooltip(this,16,48)" onclick="OnShapeClick(16,48)" onfocus="UpdateTooltip(this,16,48);" onkeyup="OnShapeKey(16,48)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Process" origTitle="Process"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -376,-102 l -74,-102 l -74,-221 l -376,-221 l -376,-102xe" onmouseover="UpdateTooltip(this,16,83)" onclick="OnShapeClick(16,83)" onfocus="UpdateTooltip(this,16,83);" onkeyup="OnShapeKey(16,83)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Main.jspx" origTitle="Main.jspx"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -857,-102 l -555,-102 l -555,-221 l -857,-221 l -857,-102xe" onmouseover="UpdateTooltip(this,16,84)" onclick="OnShapeClick(16,84)" onfocus="UpdateTooltip(this,16,84);" onkeyup="OnShapeKey(16,84)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="迁钢公司职业技能鉴定培训管理流程图" origTitle="迁钢公司职业技能鉴定培训管理流程图"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -914,-769 l 827,-769 l 827,-843 l -914,-843 l -914,-769xe" onmouseover="UpdateTooltip(this,16,1)" onclick="OnShapeClick(16,1)" onfocus="UpdateTooltip(this,16,1);" onkeyup="OnShapeKey(16,1)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="新基地工作站" origTitle="新基地工作站"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 110,996 l 315,996 l 315,876 l 110,876 l 110,996xe" onmouseover="UpdateTooltip(this,16,3)" onclick="OnShapeClick(16,3)" onfocus="UpdateTooltip(this,16,3);" onkeyup="OnShapeKey(16,3)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="部门选择" origTitle="部门选择"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m -617,714 l -315,714 l -315,594 l -617,594 l -617,714xe" onmouseover="UpdateTooltip(this,16,9)" onclick="OnShapeClick(16,9)" onfocus="UpdateTooltip(this,16,9);" onkeyup="OnShapeKey(16,9)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="人资处" origTitle="人资处"  style="top:-1000;left:-1000;width:1882;height:2000;position:absolute" path=" m 111,-403 l 314,-403 l 314,-522 l 111,-522 l 111,-403xe" onmouseover="UpdateTooltip(this,16,11)" onclick="OnShapeClick(16,11)" onfocus="UpdateTooltip(this,16,11);" onkeyup="OnShapeKey(16,11)"/> 
+
+</v:group>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+

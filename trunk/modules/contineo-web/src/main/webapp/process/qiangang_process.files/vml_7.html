@@ -1,0 +1,209 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" 
+ xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>迁钢公司职业技能鉴定培训管理流程</title>
+<style type="text/css">
+	 v\:* { behavior: url(#default#VML); }
+</style>
+
+<script src="vml_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+
+	var pageID = 0;
+	var viewMgr = null;
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+	function getPNZ()
+	{
+		var rawHTML = VMLDiv.innerHTML;
+		var strReturn = ""
+		
+		strReturn = rawHTML.slice( rawHTML.indexOf( '<v:group' ), rawHTML.indexOf( "</v:shape>" ) );
+		strReturn += "</v:shape></v:group>\n";
+				
+		return strReturn;
+	}
+	
+	function load()
+	{
+		viewMgr = new parent.CViewMgr("ConvertedImage", "arrowDiv");
+
+		viewMgr.put_Location = ViewMgrSetVMLLocation;
+
+
+		viewMgr.visBBoxLeft = 0.480617;
+		viewMgr.visBBoxRight = 7.211312;
+		viewMgr.visBBoxBottom = 5.674134;
+		viewMgr.visBBoxTop = 11.052895;
+
+		viewMgr.Zoom = VMLZoomChange;
+		viewMgr.setView= VMLSetView;
+
+		viewMgr.SupportsDetails = true;
+		viewMgr.SupportsSearch = true;
+
+		parent.viewMgr = viewMgr;
+
+		fit();
+	}
+
+	function unload()
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+
+	function fit()
+	{
+		if(parent.frmToolbar)
+		{
+			if (parent.g_WidgetsLoaded)
+			{
+				var zoom100 = parent.frmToolbar.document.all('a100');
+				if (zoom100)
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					zoom100.click();
+				}
+				else
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					viewMgr.Zoom(100);
+				}
+			}
+			else
+			{
+				window.setTimeout("fit()", 500);
+			}
+		}	
+		else
+		{
+			parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+			viewMgr.Zoom(100);
+		}
+	}
+
+	function PostZoomProcessing (newZoomLevel)
+	{
+		parent.viewMgr.PostZoomProcessing = null;
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.viewMgr.getPNZ = getPNZ;
+		parent.CurPageUpdate (pageIndex);
+	}
+
+
+	
+	var isUpLevel = parent.isUpLevel;
+	var OnShapeClick = parent.OnShapeClick;
+	var OnShapeKey = parent.OnShapeKey;
+	var UpdateTooltip = parent.UpdateTooltip;
+	var clickMenu = parent.clickMenu;
+	var toggleMenuDiv = parent.toggleMenuDiv;
+	var toggleMenuLink = parent.toggleMenuLink;
+	var GoToPage = parent.GoToPage;
+
+	window.onload = load;
+	window.onunload = unload;
+	document.onclick = clickMenu;
+
+
+
+
+</script>
+
+</head>
+
+<body style="MARGIN:10px" onresize="VMLOnResize();" onscroll="VMLOnScroll();">
+
+<div id="arrowdiv" style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+
+
+
+<div id="VMLDiv" >
+
+
+<v:group  id="ConvertedImage" style="width:5.005387in;height:4.000000in;position:absolute;visibility=hidden;" coordSize="2503,2000" coordOrigin="-1000,-1000" >
+
+<v:shapetype 
+  id="VISSHAPE"
+  target="_parent"
+  coordsize="2503,2000"
+  coordorigin="-1000,-1000"
+  stroked="f"
+  strokecolor="red"
+  filled="t"
+>
+<v:fill opacity="0.0"/>
+</v:shapetype>
+
+
+<v:shape style="top:-1000.0;left:-1000.0;width:2502.7;height:2000.0;position:absolute" coordSize="2503,2000" coordOrigin="-1000,-1000" >
+<v:imagedata src="vml_7.emz"/>
+</v:shape>
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="提出学员考试意见" origTitle="提出学员考试意见"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 245,778 l 791,778 l 791,655 l 245,655 l 245,778xe" onmouseover="UpdateTooltip(this,0,10)" onclick="OnShapeClick(0,10)" onfocus="UpdateTooltip(this,0,10);" onkeyup="OnShapeKey(0,10)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="学员反映评价" origTitle="学员反映评价"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 245,552 l 791,552 l 791,429 l 245,429 l 245,552xe" onmouseover="UpdateTooltip(this,0,11)" onclick="OnShapeClick(0,11)" onfocus="UpdateTooltip(this,0,11);" onkeyup="OnShapeKey(0,11)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="教学" origTitle="教学"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 245,341 l 791,341 l 791,219 l 245,219 l 245,341xe" onmouseover="UpdateTooltip(this,0,12)" onclick="OnShapeClick(0,12)" onfocus="UpdateTooltip(this,0,12);" onkeyup="OnShapeKey(0,12)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="学员报到、注册" origTitle="学员报到、注册"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 245,123 l 791,123 l 791,1 l 245,1 l 245,123xe" onmouseover="UpdateTooltip(this,0,13)" onclick="OnShapeClick(0,13)" onfocus="UpdateTooltip(this,0,13);" onkeyup="OnShapeKey(0,13)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="拟发培训通知" origTitle="拟发培训通知"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 245,-95 l 791,-95 l 791,-217 l 245,-217 l 245,-95xe" onmouseover="UpdateTooltip(this,0,14)" onclick="OnShapeClick(0,14)" onfocus="UpdateTooltip(this,0,14);" onkeyup="OnShapeKey(0,14)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="职责部门     |                                     管理 流 程（1）       ..." origTitle="职责部门     |                                     管理 流 程（1）       ..."  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m -994,-632 l 1484,-632 l 1484,-753 l -994,-753 l -994,-632xe" onmouseover="UpdateTooltip(this,0,27)" onclick="OnShapeClick(0,27)" onfocus="UpdateTooltip(this,0,27);" onkeyup="OnShapeKey(0,27)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="人资处 ， 新基地工作站" origTitle="人资处 ， 新基地工作站"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m -870,521 l -691,521 l -691,-122 l -870,-122 l -870,521xe" onmouseover="UpdateTooltip(this,0,61)" onclick="OnShapeClick(0,61)" onfocus="UpdateTooltip(this,0,61);" onkeyup="OnShapeKey(0,61)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="培训实施" origTitle="培训实施"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m -294,382 l -76,382 l -76,18 l -294,18 l -294,382xe" onmouseover="UpdateTooltip(this,0,62)" onclick="OnShapeClick(0,62)" onfocus="UpdateTooltip(this,0,62);" onkeyup="OnShapeKey(0,62)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_8.html" tabindex="1" title="下一页   考试申请" origTitle="下一页   考试申请"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m -491,994 l 121,994 l 121,855 l -491,855 l -491,994xe" onmouseover="UpdateTooltip(this,0,65)" onclick="OnShapeClick(0,65)" onfocus="UpdateTooltip(this,0,65);" onkeyup="OnShapeKey(0,65)"/> 
+
+<v:shape type="#VISSHAPE"  href="#" origHref="gif_6.html" tabindex="1" title="上一页   教学安排" origTitle="上一页   教学安排"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m -491,-316 l 121,-316 l 121,-455 l -491,-455 l -491,-316xe" onmouseover="UpdateTooltip(this,0,68)" onclick="OnShapeClick(0,68)" onfocus="UpdateTooltip(this,0,68);" onkeyup="OnShapeKey(0,68)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="远程培训辅导答疑安排" origTitle="远程培训辅导答疑安排"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1339,964 l 1344,963 l 1349,962 l 1354,961 l 1359,961 l 1364,960 l 1369,960 l 1374,959 l 1379,959 l 1385,959 l 1390,959 l 1395,959 l 1400,959 l 1405,959 l 1410,959 l 1416,959 l 1421,960 l 1426,960 l 1431,961 l 1436,961 l 1441,962 l 1446,963 l 1451,964 l 1456,965 l 1462,966 l 1467,967 l 1472,968 l 1477,970 l 1482,971 l 1486,973 l 1491,974 l 1496,976 l 1496,856 l 1477,856 l 1477,843 l 1107,843 l 1107,856 l 1088,856 l 1088,976 l 1093,977 l 1098,979 l 1103,980 l 1108,982 l 1113,983 l 1118,984 l 1123,986 l 1128,987 l 1133,988 l 1139,989 l 1144,989 l 1149,990 l 1154,991 l 1159,991 l 1164,992 l 1170,992 l 1175,992 l 1180,993 l 1185,993 l 1190,993 l 1195,993 l 1201,993 l 1206,992 l 1211,992 l 1216,992 l 1221,991 l 1227,991 l 1232,990 l 1237,989 l 1242,989 l 1247,988 l 1252,987 l 1257,986 l 1262,984 l 1267,983 l 1272,982 l 1277,980 l 1282,979 l 1287,977 l 1292,976 l 1297,974 l 1302,973 l 1307,971 l 1312,970 l 1317,968 l 1322,967 l 1327,966 l 1333,965 l 1338,964 l 1339,964 l 1339,964xe" onmouseover="UpdateTooltip(this,0,71)" onclick="OnShapeClick(0,71)" onfocus="UpdateTooltip(this,0,71);" onkeyup="OnShapeKey(0,71)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="职业技能鉴定培训小结" origTitle="职业技能鉴定培训小结"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1339,783 l 1344,782 l 1349,782 l 1354,781 l 1359,780 l 1364,780 l 1369,779 l 1374,779 l 1379,779 l 1385,779 l 1390,778 l 1395,778 l 1400,778 l 1405,779 l 1410,779 l 1416,779 l 1421,779 l 1426,780 l 1431,781 l 1436,781 l 1441,782 l 1446,783 l 1451,784 l 1456,785 l 1462,786 l 1467,787 l 1472,788 l 1477,789 l 1482,791 l 1486,792 l 1491,794 l 1496,795 l 1496,676 l 1477,676 l 1477,663 l 1107,663 l 1107,676 l 1088,676 l 1088,795 l 1093,797 l 1098,799 l 1103,800 l 1108,802 l 1113,803 l 1118,804 l 1123,805 l 1128,806 l 1133,807 l 1139,808 l 1144,809 l 1149,810 l 1154,810 l 1159,811 l 1164,811 l 1170,812 l 1175,812 l 1180,812 l 1185,812 l 1190,813 l 1195,812 l 1201,812 l 1206,812 l 1211,812 l 1216,811 l 1221,811 l 1227,810 l 1232,810 l 1237,809 l 1242,808 l 1247,807 l 1252,806 l 1257,805 l 1262,804 l 1267,803 l 1272,802 l 1277,800 l 1282,799 l 1287,797 l 1292,795 l 1297,794 l 1302,792 l 1307,791 l 1312,789 l 1317,788 l 1322,787 l 1327,786 l 1333,784 l 1338,784 l 1339,784 l 1339,783xe" onmouseover="UpdateTooltip(this,0,72)" onclick="OnShapeClick(0,72)" onfocus="UpdateTooltip(this,0,72);" onkeyup="OnShapeKey(0,72)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="远程培训要求及流程" origTitle="远程培训要求及流程"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1107,490 l 1088,490 l 1088,610 l 1093,612 l 1098,613 l 1103,615 l 1108,616 l 1113,618 l 1118,619 l 1123,620 l 1128,621 l 1133,622 l 1139,623 l 1144,624 l 1149,624 l 1154,625 l 1159,626 l 1164,626 l 1170,627 l 1175,627 l 1180,627 l 1185,627 l 1190,627 l 1195,627 l 1201,627 l 1206,627 l 1211,627 l 1216,626 l 1221,626 l 1227,625 l 1232,624 l 1237,624 l 1242,623 l 1247,622 l 1252,621 l 1257,620 l 1262,619 l 1267,618 l 1272,616 l 1277,615 l 1282,613 l 1287,612 l 1292,610 l 1297,608 l 1302,607 l 1307,605 l 1312,604 l 1317,603 l 1322,601 l 1327,600 l 1332,599 l 1337,598 l 1343,597 l 1348,597 l 1353,596 l 1358,595 l 1363,595 l 1368,594 l 1374,594 l 1379,593 l 1384,593 l 1389,593 l 1394,593 l 1399,593 l 1405,593 l 1410,593 l 1415,594 l 1420,594 l 1425,595 l 1431,595 l 1436,596 l 1441,597 l 1446,597 l 1451,598 l 1456,599 l 1461,600 l 1466,601 l 1471,603 l 1476,604 l 1481,605 l 1486,607 l 1491,608 l 1496,610 l 1496,490 l 1477,490 l 1477,477 l 1107,477 l 1107,490xe" onmouseover="UpdateTooltip(this,0,73)" onclick="OnShapeClick(0,73)" onfocus="UpdateTooltip(this,0,73);" onkeyup="OnShapeKey(0,73)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="专业（工种）教学要求" origTitle="专业（工种）教学要求"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1376,284 l 1330,284 l 1237,284 l 1191,284 l 1099,284 l 1099,297 l 1088,297 l 1088,417 l 1093,419 l 1098,420 l 1103,422 l 1108,423 l 1113,424 l 1118,426 l 1123,427 l 1128,428 l 1133,429 l 1139,430 l 1144,431 l 1149,431 l 1154,432 l 1159,433 l 1164,433 l 1170,433 l 1175,434 l 1180,434 l 1185,434 l 1190,434 l 1195,434 l 1201,434 l 1206,434 l 1211,433 l 1216,433 l 1221,433 l 1227,432 l 1232,431 l 1237,431 l 1242,430 l 1247,429 l 1252,428 l 1257,427 l 1262,426 l 1267,424 l 1272,423 l 1277,422 l 1282,420 l 1287,419 l 1292,417 l 1297,415 l 1302,414 l 1307,412 l 1312,411 l 1317,410 l 1322,408 l 1327,407 l 1332,406 l 1337,405 l 1343,404 l 1348,403 l 1353,403 l 1358,402 l 1363,401 l 1368,401 l 1374,401 l 1379,400 l 1384,400 l 1389,400 l 1394,400 l 1399,400 l 1405,400 l 1410,400 l 1415,401 l 1420,401 l 1425,401 l 1431,402 l 1436,403 l 1441,403 l 1446,404 l 1451,405 l 1456,406 l 1461,407 l 1466,408 l 1471,410 l 1476,411 l 1481,412 l 1486,414 l 1491,415 l 1496,417 l 1496,297 l 1469,297 l 1469,284 l 1376,284xe" onmouseover="UpdateTooltip(this,0,74)" onclick="OnShapeClick(0,74)" onfocus="UpdateTooltip(this,0,74);" onkeyup="OnShapeKey(0,74)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="学员出勤签到表" origTitle="学员出勤签到表"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1088,237 l 1093,238 l 1098,240 l 1103,241 l 1108,243 l 1113,244 l 1118,245 l 1123,246 l 1128,248 l 1133,249 l 1139,249 l 1144,250 l 1149,251 l 1154,252 l 1159,252 l 1164,253 l 1170,253 l 1175,253 l 1180,254 l 1185,254 l 1190,254 l 1195,254 l 1201,254 l 1206,253 l 1211,253 l 1216,253 l 1221,252 l 1227,252 l 1232,251 l 1237,250 l 1242,249 l 1247,249 l 1252,248 l 1257,246 l 1262,245 l 1267,244 l 1272,243 l 1277,241 l 1282,240 l 1287,238 l 1292,237 l 1297,235 l 1302,233 l 1307,232 l 1312,231 l 1317,229 l 1322,228 l 1327,227 l 1332,226 l 1337,225 l 1343,224 l 1348,223 l 1353,222 l 1358,222 l 1363,221 l 1368,221 l 1374,220 l 1379,220 l 1384,220 l 1389,220 l 1394,220 l 1399,220 l 1405,220 l 1410,220 l 1415,220 l 1420,221 l 1425,221 l 1431,222 l 1436,222 l 1441,223 l 1446,224 l 1451,225 l 1456,226 l 1461,227 l 1466,228 l 1471,229 l 1476,231 l 1481,232 l 1486,233 l 1491,235 l 1496,237 l 1496,117 l 1088,117 l 1088,237xe" onmouseover="UpdateTooltip(this,0,75)" onclick="OnShapeClick(0,75)" onfocus="UpdateTooltip(this,0,75);" onkeyup="OnShapeKey(0,75)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="学员注册登记表" origTitle="学员注册登记表"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1088,53 l 1093,55 l 1098,56 l 1103,58 l 1108,59 l 1113,61 l 1118,62 l 1123,63 l 1128,64 l 1133,65 l 1139,66 l 1144,67 l 1149,67 l 1154,68 l 1159,69 l 1164,69 l 1170,70 l 1175,70 l 1180,70 l 1185,70 l 1190,70 l 1195,70 l 1201,70 l 1206,70 l 1211,70 l 1216,69 l 1221,69 l 1227,68 l 1232,67 l 1237,67 l 1242,66 l 1247,65 l 1252,64 l 1257,63 l 1262,62 l 1267,61 l 1272,59 l 1277,58 l 1282,56 l 1287,55 l 1292,53 l 1297,52 l 1302,50 l 1307,48 l 1312,47 l 1317,46 l 1322,44 l 1327,43 l 1332,42 l 1337,41 l 1343,40 l 1348,40 l 1353,39 l 1358,38 l 1363,38 l 1368,37 l 1374,37 l 1379,36 l 1384,36 l 1389,36 l 1394,36 l 1399,36 l 1405,36 l 1410,36 l 1415,37 l 1420,37 l 1425,38 l 1431,38 l 1436,39 l 1441,40 l 1446,40 l 1451,41 l 1456,42 l 1461,43 l 1466,44 l 1471,46 l 1476,47 l 1481,48 l 1486,50 l 1491,52 l 1496,53 l 1496,-66 l 1088,-66 l 1088,53xe" onmouseover="UpdateTooltip(this,0,76)" onclick="OnShapeClick(0,76)" onfocus="UpdateTooltip(this,0,76);" onkeyup="OnShapeKey(0,76)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="首钢职工教育培训效果评估管理办法" origTitle="首钢职工教育培训效果评估管理办法"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1449,-144 l 1455,-143 l 1460,-142 l 1465,-140 l 1470,-139 l 1475,-138 l 1480,-136 l 1485,-135 l 1490,-133 l 1494,-132 l 1494,-251 l 1477,-251 l 1477,-264 l 1107,-264 l 1107,-251 l 1090,-251 l 1090,-132 l 1095,-130 l 1100,-128 l 1105,-127 l 1110,-126 l 1115,-124 l 1120,-123 l 1125,-122 l 1130,-121 l 1135,-120 l 1140,-119 l 1145,-118 l 1150,-117 l 1155,-117 l 1160,-116 l 1165,-116 l 1171,-115 l 1176,-115 l 1181,-115 l 1186,-115 l 1191,-115 l 1196,-115 l 1202,-115 l 1207,-115 l 1212,-115 l 1217,-116 l 1222,-116 l 1227,-117 l 1232,-117 l 1237,-118 l 1242,-119 l 1248,-120 l 1253,-121 l 1258,-122 l 1263,-123 l 1268,-124 l 1273,-126 l 1278,-127 l 1283,-128 l 1287,-130 l 1292,-132 l 1297,-133 l 1302,-135 l 1307,-136 l 1312,-138 l 1317,-139 l 1322,-140 l 1327,-142 l 1332,-143 l 1337,-144 l 1449,-144xe" onmouseover="UpdateTooltip(this,0,77)" onclick="OnShapeClick(0,77)" onfocus="UpdateTooltip(this,0,77);" onkeyup="OnShapeKey(0,77)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="培训学员管理规定" origTitle="培训学员管理规定"  style="top:-1000;left:-1000;width:2503;height:2000;position:absolute" path=" m 1090,-316 l 1095,-315 l 1100,-313 l 1105,-312 l 1110,-310 l 1115,-309 l 1120,-308 l 1125,-307 l 1130,-306 l 1135,-305 l 1140,-304 l 1145,-303 l 1150,-302 l 1155,-301 l 1160,-301 l 1165,-300 l 1171,-300 l 1176,-300 l 1181,-300 l 1186,-299 l 1191,-299 l 1196,-299 l 1202,-300 l 1207,-300 l 1212,-300 l 1217,-300 l 1222,-301 l 1227,-301 l 1232,-302 l 1237,-303 l 1242,-304 l 1248,-305 l 1253,-306 l 1258,-307 l 1263,-308 l 1268,-309 l 1273,-310 l 1278,-312 l 1283,-313 l 1287,-315 l 1292,-316 l 1297,-318 l 1302,-320 l 1307,-321 l 1312,-323 l 1317,-324 l 1322,-325 l 1327,-326 l 1332,-327 l 1337,-328 l 1342,-329 l 1347,-330 l 1352,-331 l 1357,-331 l 1363,-332 l 1368,-332 l 1373,-333 l 1378,-333 l 1383,-333 l 1388,-333 l 1393,-334 l 1399,-333 l 1404,-333 l 1409,-333 l 1414,-333 l 1419,-332 l 1424,-332 l 1429,-331 l 1434,-331 l 1440,-330 l 1445,-329 l 1450,-328 l 1455,-327 l 1460,-326 l 1465,-325 l 1470,-324 l 1475,-323 l 1480,-321 l 1485,-320 l 1490,-318 l 1494,-316 l 1494,-436 l 1090,-436 l 1090,-316xe" onmouseover="UpdateTooltip(this,0,78)" onclick="OnShapeClick(0,78)" onfocus="UpdateTooltip(this,0,78);" onkeyup="OnShapeKey(0,78)"/> 
+
+</v:group>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+
