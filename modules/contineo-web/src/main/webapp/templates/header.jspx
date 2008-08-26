@@ -15,15 +15,31 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:cnt="http://www.contineo.org/jsf" jsfc="ice:panelGroup">
 
-	<ice:panelGroup styleClass="headerTop"> 
+	<ice:panelGroup styleClass="headerTop">
 		<ice:graphicImage value="#{styleBean.imagesPath}/header-logo.gif"
 			style="border: 0px solid; float:left" />
+		<!-- 
+the next ui:include module:
+  include quicksearch.jspx ,this page is hava a Condition to search result
+-->
 		<ui:include src="/templates/quickSearch.jspx" />
+		<!-- 
+the next ui:include module:
+  include headerInfo.jspx ,this page is tips name's message of who load by user  
+-->
 		<ui:include src="/templates/headerInfo.jspx" />
+		<!-- 
+the next ui:include module:
+  include headerInfo.jspx ,this page is logout  
+-->
 		<ui:include src="/templates/logout.jspx" />
 	</ice:panelGroup>
-
+	<!-- 
+the next ui:include module:
+  include navigation.jspx ,this page is navigation  
+-->
 	<ice:panelGroup styleClass="navigationTop">
 		<ui:include src="/templates/navigation.jspx" />
+		<a href="/contineo/process/qiangang_process.html">process</a>
 	</ice:panelGroup>
 </jsp:root>
