@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+迁钢公司职业技能鉴定培训管理流程
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="gif_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+	if(parent.isUpLevel)
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 9;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.480617;
+	viewMgr.visBBoxRight = 7.285131;
+	viewMgr.visBBoxBottom = 4.988491;
+	viewMgr.visBBoxTop = 11.000709;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="gif_13.gif" ALT="费用结转" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="结束" origTitle="结束" TITLE="结束"  target="_top" COORDS=" 138,578 195,578 196,578 196,578 197,578 197,578 198,578 199,577 199,577 200,577 201,577 201,577 202,576 203,576 203,576 204,576 204,575 205,575 205,575 206,574 206,574 207,573 208,573 208,573 208,572 209,572 209,571 210,571 210,570 211,569 211,569 211,568 212,568 212,567 212,567 212,566 213,565 213,565 213,564 213,563 213,563 213,562 214,562 214,561 214,560 214,560 214,559 214,558 214,558 214,557 214,556 213,556 213,555 213,554 213,554 213,553 213,552 212,552 212,551 212,551 212,550 211,549 211,549 211,548 210,548 210,547 209,547 209,546 208,546 208,545 208,545 207,544 206,544 206,544 205,543 205,543 204,543 204,542 203,542 203,542 202,541 201,541 201,541 200,541 199,541 199,540 198,540 197,540 197,540 196,540 196,540 195,540 138,540 137,540 137,540 136,540 135,540 135,540 134,540 134,541 133,541 132,541 132,541 131,541 130,542 130,542 129,542 129,543 128,543 128,543 127,544 126,544 126,544 125,545 125,545 124,546 124,546 124,547 123,547 123,548 122,548 122,549 122,549 121,550 121,551 121,551 121,552 120,552 120,553 120,554 120,554 120,555 119,556 119,556 119,557 119,558 119,558 119,559 119,560 119,560 119,561 119,562 119,562 120,563 120,563 120,564 120,565 120,565 121,566 121,567 121,567 121,568 122,568 122,569 122,569 123,570 123,571 124,571 124,572 124,572 125,573 125,573 126,573 126,574 127,574 128,575 128,575 129,575 129,576 130,576 130,576 131,576 132,577 132,577 133,577 134,577 134,577 135,578 135,578 136,578 137,578 137,578 138,578" onmouseover="UpdateTooltip(this,9,4)" onfocus="UpdateTooltip(this,9,4)" onclick="return OnShapeClick(9,4);" onkeyup="OnShapeKey(9,4);">
+  <AREA shape="POLYGON" tabindex="1" ALT="培训中心" origTitle="培训中心" TITLE="培训中心"  target="_top" COORDS=" 317,523 349,523 349,426 317,426 317,523" onmouseover="UpdateTooltip(this,9,45)" onfocus="UpdateTooltip(this,9,45)" onclick="return OnShapeClick(9,45);" onkeyup="OnShapeKey(9,45);">
+  <AREA shape="POLYGON" tabindex="1" ALT="教材费汇总" origTitle="教材费汇总" TITLE="教材费汇总"  target="_top" COORDS=" 255,523 287,523 287,426 255,426 255,523" onmouseover="UpdateTooltip(this,9,33)" onfocus="UpdateTooltip(this,9,33)" onclick="return OnShapeClick(9,33);" onkeyup="OnShapeKey(9,33);">
+  <AREA shape="POLYGON" tabindex="1" ALT="鉴定费汇总" origTitle="鉴定费汇总" TITLE="鉴定费汇总"  target="_top" COORDS=" 253,404 285,404 285,311 253,311 253,404" onmouseover="UpdateTooltip(this,9,30)" onfocus="UpdateTooltip(this,9,30)" onclick="return OnShapeClick(9,30);" onkeyup="OnShapeKey(9,30);">
+  <AREA shape="POLYGON" tabindex="1" ALT="鉴定中心" origTitle="鉴定中心" TITLE="鉴定中心"  target="_top" COORDS=" 316,404 348,404 348,311 316,311 316,404" onmouseover="UpdateTooltip(this,9,29)" onfocus="UpdateTooltip(this,9,29)" onclick="return OnShapeClick(9,29);" onkeyup="OnShapeKey(9,29);">
+  <AREA shape="POLYGON" tabindex="1" ALT="迁钢财务" origTitle="迁钢财务" TITLE="迁钢财务"  target="_top" COORDS=" 315,294 347,294 347,202 315,202 315,294" onmouseover="UpdateTooltip(this,9,37)" onfocus="UpdateTooltip(this,9,37)" onclick="return OnShapeClick(9,37);" onkeyup="OnShapeKey(9,37);">
+  <AREA shape="POLYGON" tabindex="1" ALT="培训中心" origTitle="培训中心" TITLE="培训中心"  target="_top" COORDS=" 381,294 414,294 414,202 381,202 381,294" onmouseover="UpdateTooltip(this,9,36)" onfocus="UpdateTooltip(this,9,36)" onclick="return OnShapeClick(9,36);" onkeyup="OnShapeKey(9,36);">
+  <AREA shape="POLYGON" tabindex="1" ALT="5%交鉴定中心" origTitle="5%交鉴定中心" TITLE="5%交鉴定中心"  target="_top" COORDS=" 441,294 473,294 473,202 441,202 441,294" onmouseover="UpdateTooltip(this,9,35)" onfocus="UpdateTooltip(this,9,35)" onclick="return OnShapeClick(9,35);" onkeyup="OnShapeKey(9,35);">
+  <AREA shape="POLYGON" tabindex="1" ALT="培训费汇总" origTitle="培训费汇总" TITLE="培训费汇总"  target="_top" COORDS=" 252,294 284,294 284,202 252,202 252,294" onmouseover="UpdateTooltip(this,9,34)" onfocus="UpdateTooltip(this,9,34)" onclick="return OnShapeClick(9,34);" onkeyup="OnShapeKey(9,34);">
+  <AREA shape="POLYGON" tabindex="1" ALT="迁钢公司职工教育培训管理制度" origTitle="迁钢公司职工教育培训管理制度" TITLE="迁钢公司职工教育培训管理制度"  target="_top" COORDS=" 644,368 645,368 646,368 647,369 648,369 650,369 651,370 652,370 653,371 654,371 654,340 650,340 650,336 565,336 565,340 561,340 561,371 562,371 563,372 564,372 566,373 567,373 568,373 569,374 570,374 571,374 573,374 574,375 575,375 576,375 577,375 578,375 580,375 581,375 582,375 583,375 584,375 585,375 587,375 588,375 589,375 590,375 591,375 593,375 594,375 595,375 596,374 597,374 598,374 600,374 601,373 602,373 603,373 604,372 605,372 606,371 607,371 609,371 610,370 611,370 612,369 613,369 614,369 615,368 616,368 617,368 644,368" onmouseover="UpdateTooltip(this,9,99)" onfocus="UpdateTooltip(this,9,99)" onclick="return OnShapeClick(9,99);" onkeyup="OnShapeKey(9,99);">
+  <AREA shape="POLYGON" tabindex="1" ALT="上一页   试题准备" origTitle="上一页   试题准备" TITLE="上一页   试题准备" HREF="gif_12.html" target="_top" COORDS=" 87,170 246,170 246,134 87,134 87,170" onmouseover="UpdateTooltip(this,9,89)" onfocus="UpdateTooltip(this,9,89)" onclick="return OnShapeClick(9,89);" onkeyup="OnShapeKey(9,89);">
+  <AREA shape="POLYGON" tabindex="1" ALT="费用结转" origTitle="费用结转" TITLE="费用结转"  target="_top" COORDS=" 138,405 195,405 195,310 138,310 138,405" onmouseover="UpdateTooltip(this,9,83)" onfocus="UpdateTooltip(this,9,83)" onclick="return OnShapeClick(9,83);" onkeyup="OnShapeKey(9,83);">
+  <AREA shape="POLYGON" tabindex="1" ALT="新基地工作站" origTitle="新基地工作站" TITLE="新基地工作站"  target="_top" COORDS=" 34,441 65,441 65,274 34,274 34,441" onmouseover="UpdateTooltip(this,9,82)" onfocus="UpdateTooltip(this,9,82)" onclick="return OnShapeClick(9,82);" onkeyup="OnShapeKey(9,82);">
+  <AREA shape="POLYGON" tabindex="1" ALT="职责部门     |                                     管理 流 程（1）       ..." origTitle="职责部门     |                                     管理 流 程（1）       ..." TITLE="职责部门     |                                     管理 流 程（1）       ..."  target="_top" COORDS=" 0,94 643,94 643,63 0,63 0,94" onmouseover="UpdateTooltip(this,9,48)" onfocus="UpdateTooltip(this,9,48)" onclick="return OnShapeClick(9,48);" onkeyup="OnShapeKey(9,48);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+

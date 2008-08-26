@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+迁钢公司职业技能鉴定培训管理流程
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="gif_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+	if(parent.isUpLevel)
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 5;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.480617;
+	viewMgr.visBBoxRight = 7.206391;
+	viewMgr.visBBoxBottom = 5.628255;
+	viewMgr.visBBoxTop = 11.006692;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="显示所选形状的位置" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="gif_9.gif" ALT="试题准备 " name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="命题" origTitle="命题" TITLE="命题"  target="_top" COORDS=" 298,258 434,258 434,215 298,215 298,258" onmouseover="UpdateTooltip(this,5,81)" onfocus="UpdateTooltip(this,5,81)" onclick="return OnShapeClick(5,81);" onkeyup="OnShapeKey(5,81);">
+  <AREA shape="POLYGON" tabindex="1" ALT="通过" origTitle="通过" TITLE="通过"  target="_top" COORDS=" 289,449 320,449 320,370 289,370 289,449" onmouseover="UpdateTooltip(this,5,74)" onfocus="UpdateTooltip(this,5,74)" onclick="return OnShapeClick(5,74);" onkeyup="OnShapeKey(5,74);">
+  <AREA shape="POLYGON" tabindex="1" ALT="未通过" origTitle="未通过" TITLE="未通过"  target="_top" COORDS=" 403,449 433,449 433,370 403,370 403,449" onmouseover="UpdateTooltip(this,5,73)" onfocus="UpdateTooltip(this,5,73)" onclick="return OnShapeClick(5,73);" onkeyup="OnShapeKey(5,73);">
+  <AREA shape="POLYGON" tabindex="1" ALT="审题" origTitle="审题" TITLE="审题"  target="_top" COORDS=" 298,313 434,313 434,269 298,269 298,313" onmouseover="UpdateTooltip(this,5,72)" onfocus="UpdateTooltip(this,5,72)" onclick="return OnShapeClick(5,72);" onkeyup="OnShapeKey(5,72);">
+  <AREA shape="POLYGON" tabindex="1" ALT="职业技能鉴定命题表" origTitle="职业技能鉴定命题表" TITLE="职业技能鉴定命题表"  target="_top" COORDS=" 612,276 614,276 615,275 616,275 617,275 618,275 619,275 621,275 622,275 623,275 624,275 625,275 626,275 628,275 629,275 630,275 631,275 632,275 633,276 635,276 636,276 637,276 638,276 639,277 640,277 641,277 642,278 644,278 645,278 646,279 647,279 647,248 643,248 643,244 558,244 558,248 554,248 554,279 555,280 556,280 557,280 559,281 560,281 561,282 562,282 563,282 564,282 565,283 567,283 568,283 569,283 570,283 571,283 573,284 574,284 575,284 576,284 577,284 578,284 580,284 581,284 582,284 583,283 584,283 586,283 587,283 588,283 589,283 590,282 591,282 593,282 594,282 595,281 596,281 597,280 598,280 599,280 600,279 602,279 603,278 604,278 605,278 606,277 607,277 608,277 609,276 612,276 612,276" onmouseover="UpdateTooltip(this,5,71)" onfocus="UpdateTooltip(this,5,71)" onclick="return OnShapeClick(5,71);" onkeyup="OnShapeKey(5,71);">
+  <AREA shape="POLYGON" tabindex="1" ALT="职业技能鉴定命题表" origTitle="职业技能鉴定命题表" TITLE="职业技能鉴定命题表"  target="_top" COORDS=" 611,330 612,330 613,330 614,330 615,329 616,329 618,329 619,329 620,329 621,329 622,329 623,329 625,329 626,329 627,329 628,329 629,329 630,330 631,330 633,330 634,330 635,330 636,331 637,331 638,331 639,332 641,332 642,332 643,333 644,333 645,333 645,302 641,302 641,299 556,299 556,302 552,302 552,333 553,334 554,334 556,335 557,335 558,335 559,336 560,336 561,336 562,337 564,337 565,337 566,337 567,337 568,338 569,338 571,338 572,338 573,338 574,338 575,338 577,338 578,338 579,338 580,338 581,338 582,338 584,337 585,337 586,337 587,337 588,337 589,336 591,336 592,336 593,335 594,335 595,335 596,334 597,334 599,333 600,333 601,333 602,332 603,332 604,332 605,331 606,331 608,331 609,330 611,330 611,330" onmouseover="UpdateTooltip(this,5,70)" onfocus="UpdateTooltip(this,5,70)" onclick="return OnShapeClick(5,70);" onkeyup="OnShapeKey(5,70);">
+  <AREA shape="POLYGON" tabindex="1" ALT="迁钢公司职工教育培训管理制度" origTitle="迁钢公司职工教育培训管理制度" TITLE="迁钢公司职工教育培训管理制度"  target="_top" COORDS=" 635,388 636,389 637,389 638,389 639,389 640,390 642,390 643,390 644,391 645,391 645,360 641,360 641,357 556,357 556,360 552,360 552,391 553,392 554,392 556,393 557,393 558,393 559,394 560,394 561,394 562,394 564,395 565,395 566,395 567,395 568,395 569,395 571,396 572,396 573,396 574,396 575,396 577,396 578,396 579,396 580,396 581,395 582,395 584,395 585,395 586,395 587,395 588,394 589,394 591,394 592,394 593,393 594,393 595,393 596,392 597,392 599,391 600,391 601,390 602,390 603,390 604,389 605,389 606,389 608,389 609,388 635,388" onmouseover="UpdateTooltip(this,5,69)" onfocus="UpdateTooltip(this,5,69)" onclick="return OnShapeClick(5,69);" onkeyup="OnShapeKey(5,69);">
+  <AREA shape="POLYGON" tabindex="1" ALT="上一页   考试申请" origTitle="上一页   考试申请" TITLE="上一页   考试申请" HREF="gif_8.html" target="_top" COORDS=" 131,176 290,176 290,140 131,140 131,176" onmouseover="UpdateTooltip(this,5,60)" onfocus="UpdateTooltip(this,5,60)" onclick="return OnShapeClick(5,60);" onkeyup="OnShapeKey(5,60);">
+  <AREA shape="POLYGON" tabindex="1" ALT="下一页   考试组织" origTitle="下一页   考试组织" TITLE="下一页   考试组织" HREF="gif_10.html" target="_top" COORDS=" 131,517 290,517 290,481 131,481 131,517" onmouseover="UpdateTooltip(this,5,57)" onfocus="UpdateTooltip(this,5,57)" onclick="return OnShapeClick(5,57);" onkeyup="OnShapeKey(5,57);">
+  <AREA shape="POLYGON" tabindex="1" ALT="试题准备" origTitle="试题准备" TITLE="试题准备"  target="_top" COORDS=" 182,358 239,358 239,263 182,263 182,358" onmouseover="UpdateTooltip(this,5,54)" onfocus="UpdateTooltip(this,5,54)" onclick="return OnShapeClick(5,54);" onkeyup="OnShapeKey(5,54);">
+  <AREA shape="POLYGON" tabindex="1" ALT="人资处" origTitle="人资处" TITLE="人资处"  target="_top" COORDS=" 32,394 64,394 64,227 32,227 32,394" onmouseover="UpdateTooltip(this,5,53)" onfocus="UpdateTooltip(this,5,53)" onclick="return OnShapeClick(5,53);" onkeyup="OnShapeKey(5,53);">
+  <AREA shape="POLYGON" tabindex="1" ALT="职责部门     |                                     管理 流 程（1）       ..." origTitle="职责部门     |                                     管理 流 程（1）       ..." TITLE="职责部门     |                                     管理 流 程（1）       ..."  target="_top" COORDS=" 0,94 644,94 644,63 0,63 0,94" onmouseover="UpdateTooltip(this,5,19)" onfocus="UpdateTooltip(this,5,19)" onclick="return OnShapeClick(5,19);" onkeyup="OnShapeKey(5,19);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+
